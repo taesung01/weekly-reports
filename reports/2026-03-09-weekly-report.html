@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📊 [AX Insight팀] 주간 SNS 트렌드 리포트 (3월 2주차)</title>
+      <style>
+        /* 이전과 동일한 스타일 */
+        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #333; }
+        .container { max-width: 800px; margin: 20px auto; background-color: #f4f7f9; padding: 15px; border-radius: 10px; }
+        .card { background-color: #ffffff; padding: 25px 30px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e0e6ed; border-left: 6px solid; }
+        .card-insight { border-left-color: #ff6f61; } .card-top-content { border-left-color: #4a90e2; }
+        .card-analysis { border-left-color: #50c878; } .card-charts { border-left-color: #8e44ad; }
+        .card-comment { border-left-color: #f1c40f; } .card-suggestion { border-left-color: #1abc9c; }
+        .card-competitor-summary { border-left-color: #fd7e14; } /* 경쟁사 요약 주황색 */
+
+        /* 새로운 스타일 추가 */
+        .report-title-box {
+          background-color: #e0f2f7; /* 연한 파란색 */
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .report-title {
+          color: #2c3e50;
+          font-size: 26px;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        h3 { color: #ffffff; background-color: #5d6d7e; padding: 10px 15px; margin: -25px -30px 20px -30px; border-radius: 8px 8px 0 0; font-size: 18px; font-weight: 600; display: flex; align-items: center; }
+        .card-insight h3 { background-color: #ff6f61; } .card-top-content h3 { background-color: #4a90e2; }
+        .card-analysis h3 { background-color: #50c878; } .card-charts h3 { background-color: #8e44ad; }
+        .card-comment h3 { background-color: #f1c40f; color: #555;} .card-suggestion h3 { background-color: #1abc9c; }
+        .card-competitor-summary h3 { background-color: #fd7e14; } /* 경쟁사 요약 주황색 */
+
+        h4 { font-size: 16px; margin: 25px 0 12px 0; color: #ffffff; font-weight: 600; border-bottom: none; padding: 8px 15px; background-color: #a5b1c2; border-radius: 6px 6px 0 0;} /* h4 스타일 개선 */
+        p, li, td, th { font-size: 14px; color: #495057; line-height: 1.75; }
+        ul { list-style-type: none; padding: 0; margin: 0; }
+        .subsection-content { background-color: #ffffff; padding: 15px 20px; border-radius: 0 0 6px 6px; border: 1px solid #e0e6ed; border-top: none; margin-bottom: 25px; margin-top: -12px;} /* 서브섹션 박스 */
+        .subsection-content ul { padding-left: 0px;} /* 내부 ul 패딩 제거 */
+        li { margin-bottom: 15px; padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid #f1f3f5;}
+        li:last-child { border-bottom: none; margin-bottom: 0;}
+        li::before { content: '✔'; color: #3498db; position: absolute; left: 0; top: 11px; font-size: 14px; font-weight: bold; }
+
+        a { color: #2980b9; text-decoration: none; font-weight: 500; } a:hover { text-decoration: underline; color: #1f618d; }
+        .greeting, .closing { text-align: left; font-size: 14px; margin-bottom: 25px; line-height: 1.7; }
+        .closing { margin-top: 30px; font-size: 12px; border-top: 1px solid #d5dbdb; padding-top: 20px; color: #7f8c8d; }
+        .footer { text-align: center; color: #aab7c4; font-size: 11px; margin-top: 30px; }
+        .highlight { background-color: #fef9e7; padding: 2px 5px; border-radius: 4px; font-weight: 600; color: #b7950b; border: 1px solid #fdeca6;}
+        .sub-link-box { background-color: #eafaf1; padding: 12px 18px; border-radius: 6px; margin: 15px 0 20px 0; font-size: 13px; border: 1px solid #a3e4d7; }
+        .sub-link-box a { color: #16a085; font-weight: 600;}
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 15px; border: 1px solid #dee2e6; border-radius: 6px; overflow: hidden; }
+        th, td { border-bottom: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-size: 13px; vertical-align: top; } /* vertical-align 추가 */
+        td:first-child { color: #333; font-weight: 500;}
+        th { background-color: #f1f3f5; font-weight: 600; color: #495057; border-top: none; border-bottom-width: 2px;}
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background-color: #f8f9fa; }
+        .table-caption { font-size: 15px; font-weight: 600; margin-bottom: 10px; color: #34495e; }
+        .ai-comment { background-color: #f8f9fa; border-left: 4px solid #adb5bd; padding: 12px 18px; margin-top: 18px; font-size: 13px; border-radius: 4px; line-height: 1.65; color: #495057; }
+        .emoji { font-size: 1.1em; margin-right: 10px; vertical-align: -1px; }
+        .small-text { font-size: 12px; color: #868e96; margin-top: 6px; display: block; }
+        .keyword-tag { background-color: #e9ecef; padding: 4px 10px; border-radius: 15px; font-size: 12px; margin-right: 6px; display: inline-block; margin-bottom: 6px; color: #495057; border: 1px solid #ced4da;}
+        /* 댓글 시각화 스타일 */
+        .sentiment-bar-container { display: flex; height: 22px; border-radius: 5px; overflow: hidden; margin-bottom: 8px; border: 1px solid #ced4da; background-color: #e9ecef; }
+        .sentiment-bar { display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 600; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+        .sentiment-positive { background-color: #2ecc71; } /* 초록 */
+        .sentiment-neutral { background-color: #f39c12; color: #fff;} /* 주황 */
+        .sentiment-negative { background-color: #e74c3c; } /* 빨강 */
+        .comment-list { list-style-type: decimal; padding-left: 20px; margin-top: 8px; }
+        .comment-list li { margin-bottom: 8px; padding-left: 8px; border-bottom: none; line-height: 1.6; }
+        .comment-list li::before { content: counter(list-item) ". "; counter-increment: list-item; position: absolute; left: -5px; top: 1px; color: #95a5a6; font-size: 13px; font-weight: normal;}
+        .ref-video-link { font-size: 11px; color: #7f8c8d; margin-left: 5px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; } /* 관련 영상 링크 스타일 */
+
+      </style></head><body><div class="container">
+        <div class="report-title-box">
+          <h2 class="report-title">📊 [AX Insight팀] 주간 SNS 트렌드 리포트 (3월 2주차)</h2>
+        </div>
+        <p class="greeting">안녕하세요, AX Insight팀 SNS 탐정입니다! 🕵️<br>지난주 유튜브와 인스타그램에서 뜨거웠던 콘텐츠와 트렌드를 파헤쳐 왔어요!<br>주간 SNS 트렌드가 어땠는지 LG전자와 경쟁사의 주요 움직임을 함께 살펴보시죠~</p>
+
+        <div class="card card-insight"><h3><span class="emoji">⚡</span>금주의 인사이트</h3><p>전자/IT 인기 유튜버들의 유튜브 데이터를 분석한 결과, 가장 높은 조회수를 기록한 영상은 "앗 맥북 아이폰보다 싸다! 애플의 99만원짜리 노트북 과연 괜찮을까?"로 735,030회 조회되었습니다. 이 트렌드는 저렴한 프리미엄 전자제품에 대한 소비자 관심이 급증하고 있음을 보여주며, LG전자는 비슷한 가격대의 올레드 TV나 그램 노트북을 강조한 콘텐츠를 제작하여 브랜드 영향력을 확대해야 합니다. 참여도를 향상시키기 위해 인스타그램의 총 476,735회 좋아요를 기반으로, 사용자 생성 콘텐츠(UGC) 캠페인을 도입하여 팔로워들의 리뷰나 스토리를 공유하도록 유도하세요. 경쟁사 동향으로는 애플의 강력한 조회수 성과가 두드러지며, 삼성전자의 다채로운 영상이 뒤따르고 있으므로 LG는 차별화된 혁신 기능, 예를 들어 AI 기술을 적용한 제품 리뷰를 통해 대응 전략을 세우세요. 또한, HP나 기타 브랜드의 상대적 약세를 활용해 LG의 고성능 가전 제품을 비교 분석하는 크로스오버 콘텐츠를 생성하여 시장 점유율을 높이세요. 이러한 접근으로 LG의 소셜 미디어 전략이 더 효과적으로 운영될 수 있습니다.</p></div>
+
+      <div class="card card-top-content"><h3><span class="emoji">🏆</span>상위 콘텐츠</h3>
+        <div class="sub-link-box">💡 Detail한 유튜브 콘텐츠 분석은 <a href="https://taesung01.github.io/youtube-analysis-form/" target="_blank">[AX Insight팀] YouTube 동영상 분석 Agent</a> 로 진행해 주세요!</div>
+        <h4><span class="emoji">📺</span>주목할 유튜브 영상 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. 앗 맥북 아이폰보다 싸다! 애플의 99만원짜리 노트북 과연 괜찮을까? (잇섭)</strong><span class="small-text">- 업로드: 2026.03.05 | 조회수: 735,030 | 좋아요: 7,027 | 댓글: 1,632</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+🔹 00:00 형.. (인사 부분)
+
+영상이 시작되며 호스트가 간단한 인사를 통해 시청자를 맞이하는 것으로 추정되며, 이는 영상의 캐주얼한 톤을 설정합니다. 호스트 인사를 통해
+영상의 주제가 애플의 신제품에 대한 리뷰임을 암시하며, 시청자 참여를 유도할 수 있습니다. 이 부분은 전체 영상의 서두로서, 후속 콘텐츠에 대한
+기대감을 높이는 역할을 합니다.
+
+🔹 00:11 오프닝 (영상 소개)
+
+오프닝에서 호스트가 맥북 네오의 공개 소식을 소개하며, 소문으로만 돌던 저가형 보급 모델이 드디어 나왔다는 점을 강조합니다. 가격이 99만원으로
+아이폰보다 저렴하다는 점을 주요 포인트로 언급하며, 2026년 메모리 파동 시대의 배경을 설명하여 제품의 시장적 의미를 설명합니다. 이 부분은
+영상의 주제인 애플 노트북의 가성비를 도입하며, 시청자들이 제품의 기대치에 대해 생각하게 유도합니다.
+
+🔹 00:54 가격 (가격 관련 논의)
+
+이 챕터에서 호스트가 99만원이라는 파격적인 가격을 상세히 설명하며, 기존 애플 제품과의 비교를 통해 저렴함의 장점을 강조합니다. 가격이
+100만원 이하임에도 불구하고 고급 기능을 포함한 이유를 분석하며, 시장 경쟁력에 미치는 영향을 논의합니다. 이 부분은 가격 경쟁력을 핵심
+키워드로 다루며, 시청자들이 구매 의사를 고려할 수 있도록 구체적인 예시를 제공합니다.
+
+🔹 02:00 디자인 (디자인 설명)
+
+디자인 챕터에서는 맥북 네오의 외형과 소재를 자세히 검토하며, 기존 모델과의 차이점을 비교합니다. 가벼운 무게(1.23kg)와 미니멀한 디자인을
+강조하며, 일상적인 사용성을 높이는 요소로 설명합니다. 이 부분은 디자인 혁신을 통해 제품의 매력을 전달하며, 시청자들이 시각적 만족도를 평가할
+수 있도록 여러 측면을 다룹니다.
+
+🔹 03:10 스피커 (스피커 기능)
+
+스피커 부분에서 맥북 네오의 오디오 성능을 리뷰하며, 고품질 사운드 출력 능력을 테스트합니다. 스피커의 음질과 볼륨 범위를 분석하며, 멀티미디어
+사용 시의 장점을 설명합니다. 이 챕터는 오디오 기능의 실용성을 강조하며, 영상 편집이나 음악 감상에 적합한지 평가합니다.
+
+🔹 03:51 단자 (연결 포트)
+
+단자 챕터에서 Wi-Fi 6E와 Bluetooth 6 같은 무선 연결 옵션을 소개하며, 유선 포트의 유무를 검토합니다. 호스트가 다양한 주변기기
+연결의 편의성을 논의하며, 현대적인 사용 환경에 맞는지를 평가합니다. 이 부분은 연결성을 키워드로 하며, 제품의 실사용성을 높이는 요소로
+설명합니다.
+
+🔹 04:40 디스플레이 (디스플레이 스펙)
+
+디스플레이 섹션에서 13인치 Liquid Retina Display의 해상도(2408 x 1506)와 밝기(500니트)를 자세히 설명합니다. 색
+재현력과 시야각을 분석하며, 콘텐츠 제작에 적합한지 비교합니다. 이 챕터는 화면 품질을 중점으로 하며, 시청자들이 영상의 시각적 경험을 상상할
+수 있도록 합니다.
+
+🔹 05:40 터치패드 (터치패드 기능)
+
+터치패드 챕터에서 Touch ID 포함 기능을 강조하며, 사용자 인터페이스의 민감도와 정확성을 검토합니다. 호스트가 제스처 인식의 편의성을
+실증하며, 일상 작업에서의 이점을 논의합니다. 이 부분은 사용자 경험을 키워드로 하며, 제품의 실용성을 더합니다.
+
+🔹 06:02 성능 (성능 관련)
+
+성능 섹션에서 Apple A18 Pro 프로세서(6CPU, 5GPU)를 중심으로 처리 속도를 분석합니다. 8GB 메모리와
+저장장치(256GB/512GB)의 적합성을 평가하며, 2026년 메모리 파동 시대에서의 안정성을 설명합니다. 이 챕터는 성능 균형을 강조하며,
+고사양 작업에 대한 잠재력을 논의합니다.
+
+🔹 07:48 옵션 (추가 옵션)
+
+옵션 챕터에서 다양한 구성 옵션(예: 저장장치 업그레이드)을 소개하며, 사용자 맞춤형 선택의 유연성을 설명합니다. 호스트가 가격 대비 옵션의
+가치를 비교하며, 추천 조합을 제안합니다. 이 부분은 커스터마이징을 키워드로 하며, 구매 시 고려사항을 상세히 다룹니다.
+
+🔹 08:32 배터리 (배터리 용량)
+
+배터리 섹션에서 36.5Wh 용량을 기반으로 지속 시간과 효율성을 분석합니다. 호스트가 실제 사용 시나리오를 통해 장단점을 논의하며, 이동성에
+미치는 영향을 설명합니다. 이 챕터는 배터리 수명을 강조하며, 제품의 휴대성을 평가합니다.
+
+🔹 09:01 오늘의 결론 (결론 부분)
+
+결론에서 호스트가 맥북 네오의 전체적인 가성비를 요약하며, 강점(저가격, 기본 스펙)과 약점(메모리 한계)을 정리합니다. 향후 업그레이드
+가능성과 추천 여부를 제안하며, 시청자 질문에 대한 답변을 유도합니다. 이 부분은 최종 평가를 통해 영상을 마무지며, 제품 구매 결정에 유용한
+인사이트를 제공합니다.
+
+
+📝 결론 및 제언
+
+이 영상은 애플의 저가형 노트북(맥북 네오)의 가격, 디자인, 성능 등을 중점적으로 다루며, 99만원이라는 가격으로 인해 가성비를 강조하는
+논점을 제시합니다. 이는 소비자들이 고가 브랜드 제품의 접근성을 높이는 추세를 반영하며, IT 시장에서의 가격 경쟁이 제품 선택에 미치는 의미를
+보여줍니다. 시청자는 저렴한 가격에도 기본적인 성능과 디자인의 균형을 고려한 구매 인사이트를 얻을 수 있으며, 관련 산업에서는 애플의 전략이
+경쟁사들의 가격 정책 변화로 이어질 수 있음을 시사합니다. 제언으로, IT 기업들은 이러한 가성비 중심 콘텐츠가 증가하는 추세에 맞춰 제품의
+실사용성 강조와 마케팅 전략을 강화하는 것이 효과적일 수 있습니다. </div><a href="https://www.youtube.com/watch?v=mDrBq69ji3s" target="_blank">영상 보기 &rarr;</a></li><li><strong>2. 엑시노스가 왜 멀?쩡??하죠?? (UNDERkg)</strong><span class="small-text">- 업로드: 2026.03.06 | 조회수: 270,397 | 좋아요: 3,988 | 댓글: 1,342</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+영상에 제공된 챕터 정보를 기반으로 각 챕터의 제목과 핵심 내용을 요약합니다. 이는 갤럭시 S26 시리즈의 엑시노스 2600 성능을 중점으로
+다루며, 제품 개봉부터 벤치마크 결과까지 다룹니다.
+
+챕터 1: 00:00 - 인트로
+
+이 챕터에서 영상의 주제를 간단히 소개하며, 갤럭시 S26 시리즈와 엑시노스 2600 프로세서의 성능에 대한 의문을 제기합니다. 채널러가 최근에
+제품을 받았음을 언급하며, 예상치 못한 안정적인 성능에 대한 기대감을 표현합니다. 또한, 간단한 배경 설명으로 시청자를 끌어들이는 역할을
+합니다.
+
+챕터 2: 00:28 - 인사
+
+여기서 채널러가 시청자에게 인사하며, 영상의 목적을 명확히 밝히고 엑시노스 2600의 벤치마크 테스트를 예고합니다. 과거 엑시노스 시리즈의
+문제점을 간접적으로 언급하며, 이번 버전의 개선된 점에 대한 흥미를 유발합니다. 이 부분은 영상의 전체적인 흐름을 설정하며, 시청자와의 연결을
+강화합니다.
+
+챕터 3: 01:01 - 개봉 및 설정
+
+갤럭시 S26 시리즈 세 대(기본, 플러스, 울트라)를 개봉하는 과정을 보여주며, 포장 상태와 초기 인상을 공유합니다. 설정 프로세스를
+단계적으로 설명하며, 사용자 친화적인 인터페이스에 대한 첫 평가를 합니다. 이 챕터는 제품의 물리적 특성과 초기 설정의 간단함을 강조하여,
+시청자에게 실사용감을 전달합니다.
+
+챕터 4: 02:48 - 갤럭시 S26
+
+기본 갤럭시 S26 모델의 디자인과 주요 사양을 자세히 검토하며, 엑시노스 2600의 초기 성능을 언급합니다. 화면 해상도와 배터리 효율성을
+테스트하며, 이전 모델과의 차이점을 비교합니다. 이 부분은 제품의 기본적인 매력을 강조하여, 잠재적 구매자들의 관심을 높입니다.
+
+챕터 5: 03:54 - 갤럭시 S26 플러스
+
+갤럭시 S26 플러스의 업그레이드된 기능을 중점으로 다루며, 추가 메모리와 카메라 성능을 시연합니다. 엑시노스 2600 프로세서가 멀티태스킹에서
+안정적으로 작동하는 모습을 보여줍니다. 이 챕터는 표준 모델 대비의 가치와 성능 차이를 분석하여, 소비자 선택 기준을 제시합니다.
+
+챕터 6: 04:35 - 갤럭시 S26 울트라
+
+갤럭시 S26 울트라의 고급 기능, 예를 들어 S펜과 고해상도 디스플레이를 강조하며, 엑시노스 2600의 그래픽 처리 능력을 테스트합니다. 이
+모델의 프리미엄 측면을 통해 전체 시리즈의 강점을 비교합니다. 채널러의 개인적인 사용 후기를 추가하여, 실용성을 더합니다.
+
+챕터 7: 05:43 - 소리
+
+스피커와 오디오 품질을 테스트하며, 갤럭시 S26 시리즈의 사운드 시스템 개선점을 설명합니다. 다양한 미디어 재생에서 엑시노스 2600의 처리
+속도를 확인합니다. 이 챕터는 사용자 경험의 일상적인 측면을 중점으로 다루며, 소리의 명료도와 볼륨 범위를 평가합니다.
+
+챕터 8: 06:15 - 프라이버시 디스플레이
+
+프라이버시 디스플레이 기능을 시연하며, 화면 보안 기술의 효과를 보여줍니다. 엑시노스 2600이 이를 지원하는 안정성을 강조합니다. 이 부분은
+개인 정보 보호의 중요성을 논의하며, 실제 시나리오를 통해 기능의 실용성을 입증합니다.
+
+챕터 9: 07:22 - 벤치마크
+
+엑시노스 2600의 벤치마크 결과를 공개하며, 스냅드래곤과의 비교를 통해 예상보다 우수한 성능을 분석합니다. 여러 테스트 도구를 사용해 CPU와
+GPU 점수를 상세히 설명합니다. 이 챕터는 영상의 핵심 인사이트를 제공하며, 과거 엑시노스 문제 개선의 의미를 강조합니다.
+
+챕터 10: 08:39 - 정리
+
+전체 영상을 마무지며, 엑시노스 2600의 안정된 성능을 종합적으로 평가합니다. 향후 업데이트나 잠재적 단점에 대한 제안을 추가하며, 시청자에게
+구매 추천을 합니다. 이 챕터는 영상의 주요 키워드를 재강조하며, 긍정적인 결론으로 마무리합니다.
+
+
+📝 결론 및 제언
+
+영상은 삼성의 엑시노스 2600 프로세서와 갤럭시 S26 시리즈의 성능을 중점적으로 다루며, 과거 엑시노스 문제점 개선과 벤치마크 결과를 통해
+모바일 프로세서 기술의 진화를 보여줍니다. 이는 스마트폰 산업에서 프로세서 안정성과 효율성의 중요성을 강조하며, 시청자가 제품 선택 시 성능
+기준을 재고할 수 있는 핵심 인사이트를 제공합니다. 관련 산업에 미치는 영향으로는 삼성의 기술 향상이 경쟁사에게 자극을 주며, LG전자와 같은
+기업이 자사 제품의 프로세서 경쟁력을 강화할 기회를 부여할 수 있습니다. 제언으로, 삼성의 성공 사례를 참고하여 LG전자는 자사 스마트폰(예:
+LG V 시리즈)의 프로세서 최적화와 사용자 경험 개선에 투자하는 것이 유리할 수 있습니다. </div><a href="https://www.youtube.com/watch?v=ulVdcasl2D4" target="_blank">영상 보기 &rarr;</a></li><li><strong>3. 와....삼성 로봇청소기 신형 드.디.어 출시! (귀곰)</strong><span class="small-text">- 업로드: 2026.03.03 | 조회수: 122,357 | 좋아요: 1,009 | 댓글: 163</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> **영상 정보 요약**
+• 채널: 귀곰
+• 조회수: 122,357회
+• 좋아요: 1,009개
+• 댓글: 163개
+
+**주요 댓글**
+***내돈내산 삼성 로청 리뷰는 3월 13일 금요일 예정***
+
+*흡입력은 기존보다 2배 강해진 10W의 강력한 수치다. 사실 W(와트)는 한국소비자원에서도 실제 먼지제거 성능을 가늠할 수 있는 흡입력 측정 지표로 인정한 단위인만큼 해외 업체들도 좀 W단위로 통일했으면...
+
+**성과 분석**
+• 높은 관심도: 10만 회 이상 조회로 화제성 있는 콘텐츠
+• 좋아요 비율: 0.82% (시청자 반응 지표)
+
+*※ AI 요약이 준비되지 않아 기존 데이터를 바탕으로 생성된 요약입니다.* </div><a href="https://www.youtube.com/watch?v=2np_SSjPwCw" target="_blank">영상 보기 &rarr;</a></li></ul></div>
+
+        <h4><span class="emoji">📸</span>인스타그램 핫 포스트 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. THE BOYS (Even if they have to drag each other over the finish line, they’re going all the way. No matter the cost. Til the job’s fuckin’ done.)</strong><span class="small-text">- 업로드: 2026.03.05 | 좋아요: 469,068 | 댓글: 2,869</span><a href="https://www.instagram.com/sony/" target="_blank">게시물 보기 &rarr;</a></li><li><strong>2. Sony (Our Creator of the Week goes out to @tsvtvs for giving us all the Friday vibes with these shots using the Sony Alpha 1 + FE 300mm F2.8 📸)</strong><span class="small-text">- 업로드: 2026.03.07 | 좋아요: 3,665 | 댓글: 33</span><a href="https://www.instagram.com/sony/" target="_blank">게시물 보기 &rarr;</a></li><li><strong>3. Sony Electronics (On April 5 at 7 p.m. ET, ESPN, Disney, Pixar and the NHL will present the Inside Out Classic, an animated alt-cast of a live NHL game set inside the mind of Riley from the world of Inside Out.
+ 
+Streaming live, this alternative broadcast will reimagine the Washington Capitals vs. New York Rangers matchup, transforming real-time NHL gameplay into an immersive animated experience. The game will be powered through the support of Sony’s @beyondsports visualization technology and @hawkeyeinnovations optical tracking, converting live NHL data into dynamic animated action as it happens.
+ 
+Tune in on April 5 on ESPN+, Disney+, Disney Channel and Disney XD to watch Inside Out’s biggest characters like Joy, Sadness, Anger, Fear and Anxiety compete alongside animated NHL stars in real time)</strong><span class="small-text">- 업로드: 2026.03.06 | 좋아요: 1,761 | 댓글: 34</span><a href="https://www.instagram.com/sony/" target="_blank">게시물 보기 &rarr;</a></li></ul></div>
+        <h4><span class="emoji">🔥</span>주요 경쟁사 콘텐츠 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. 애플: 애플 스디플 그돈씨? 160만원 더 싼 맥북 찰떡 모니터 등장?</strong><span class="small-text">- 채널: 주연 ZUYONI | 업로드: 2026.03.07 | 조회수: 213,502 | 좋아요: 2,443 | 댓글: 273</span><a href="https://www.youtube.com/watch?v=7YJ_C9Yuoz4" target="_blank">영상 보기 &rarr;</a></li><li><strong>2. 기타: 10만 원대에 압도적 성능! 2026년 2월 현시점 가성비 태블릿 TOP4 비교 추천! (갤럭시탭 아이패드 레노버 대화면 미니 LTE 영상용 필기)</strong><span class="small-text">- 채널: 아정당 | 업로드: 2026.03.07 | 조회수: 74,807 | 좋아요: 707 | 댓글: 55</span><a href="https://www.youtube.com/watch?v=7D7jiCQjcpE" target="_blank">영상 보기 &rarr;</a></li><li><strong>3. HP: “이중에 고르면 끝!”  2026년 2월 가성비 노트북 판매 랭킹 TOP10🔥가성비노트북｜노트북추천｜게이밍노트북｜삼성｜엘지｜HP｜레노버｜대학생노트북｜윈도우노트북｜사무용노트북｜</strong><span class="small-text">- 채널: 리뷰머신 | 업로드: 2026.03.07 | 조회수: 50,535 | 좋아요: 355 | 댓글: 177</span><a href="https://www.youtube.com/watch?v=8IItfvw0SP8" target="_blank">영상 보기 &rarr;</a></li></ul></div>
+      </div>
+
+      
+    <div class="card card-analysis"> <h3><span class="emoji">📈</span> 주간 YouTube 경쟁사 분석</h3> <h4 style="margin-top: 0; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">주요 경쟁사 동향 (Top 7 언급량 기준)</h4>
+      <table style="width:100%; border-collapse:collapse; font-size:13px;"><thead><tr style="background-color:#f1f3f5;"><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">브랜드</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">언급량</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 조회수/좋아요</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 좋아요/댓글</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 댓글/참여율</th></tr></thead><tbody><tr style="background-color: #e9f5ff;"><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">LG (기준)</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">6</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">106.14</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">2.27</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">19.26</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">기타</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">19</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">108.73</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">3.83</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">61.91</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">HP</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">11</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">137.38</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">3.60</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">50.86</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">애플</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">3</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">92.22</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">9.18</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">92.50</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">삼성전자</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">2</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">112.00</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">4.29</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">19.09</td></tr></tbody></table>
+
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">주간 트렌드 분석</h4>
+      <p>이번 주 유튜브 트렌드에서 LG전자는 직접적인 상위 키워드(잇섭, UNDERkg)로 나타나지 않고, 경쟁사 콘텐츠(예: 삼성 갤럭시북 vs LG 그램 비교)에서 비교 대상으로만 언급되며 브랜드 영향력이 상대적으로 약한 모습을 보인다. 이를 바탕으로 LG는 자체 인플루언서 협업이나 차별화된 제품 강조 콘텐츠를 강화하여 삼성의 가성비 중심 마케팅에 대응하는 전략을 수립해야 할 필요가 있다.</p>
+
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">분석 기반 추천사항</h4>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13px; list-style-type: disc;"><li>LG의 높은 참여율을 활용하여, 소셜 미디어 채널(예: Instagram, YouTube)에서 사용자 참여형 콘텐츠를 확대하세요. 예를 들어, 제품 사용 후기나 실시간 Q&A 세션을 통해 팬 커뮤니티를 강화하면, 기존 참여율(1.35%)을 유지하면서도 자연스러운 언급량 증가를 유도할 수 있습니다. 이는 경쟁사인 HP의 높은 긍정율(94.45%)을 벤치마킹하여, 긍정적인 피드백을 더 유도하는 방향으로 콘텐츠를 설계하세요.</li>
+
+<li>언급량을 높이기 위해 해시태그 캠페인과 인플루언서 협업을 적극 활용하세요. LG의 제품을 테마로 한 '#LGLife' 같은 캠페인을 전개하고, 인기 크리에이터와 파트너십을 맺어 콘텐츠를 공유하면, 기타 경쟁사의 언급량(19)을 추월할 수 있습니다. 이 전략으로 브랜드 노출을 확대하면서, 삼성전자의 낮은 긍정율(50.00%)과 대비되는 LG의 강점인 긍정율(83.30%)을 강조하세요.</li>
+
+<li>경쟁사 대응으로 고객 중심 콘텐츠를 제작하여 긍정율을 더욱 높이세요. HP의 높은 긍정율을 분석해, 제품 개선 사례나 사용자 스토리를 중심으로 한 스토리텔링 콘텐츠를 생성하면, 애플의 낮은 긍정율(66.70%)과 차별화할 수 있습니다. 이를 통해 소셜 미디어에서 LG의 브랜드 이미지를 강화하고, 참여율을 유지하면서도 전체적인 성과를 향상시키는 효과를 기대하세요.</li></ul>
+
+      <div class="sub-link-box" style="margin-top: 20px;">🔗 <a href="https://taesung01.github.io/youtube-analysis-form/dashboard.html" target="_blank">주간 YouTube Trend 스냅샷 대시보드</a><br><span style="font-size: 12px; color: #555;">브랜드별 SNS 상세비교 지표는 위 대시보드를 참조하세요!</span></div>
+    </div>
+
+      <div class="card card-charts"><h3><span class="emoji">⚔️</span> 경쟁사 분석 차트</h3>
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">📊 브랜드별 SNS 언급량 비교</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22HP%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EC%96%B8%EA%B8%89%EB%9F%89%22%2C%22data%22%3A%5B19%2C11%2C3%2C2%5D%7D%5D%7D%7D" alt="📊 브랜드별 SNS 언급량 비교" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">👀 브랜드별 SNS 참여율</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22HP%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EC%B0%B8%EC%97%AC%EC%9C%A8(%25)%22%2C%22data%22%3A%5B%221.18%22%2C%221.02%22%2C%221.20%22%2C%221.10%22%5D%7D%5D%7D%7D" alt="👀 브랜드별 SNS 참여율" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">🔥 브랜드별 긍정적 언급 비율</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22HP%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EA%B8%8D%EC%A0%95%EC%A0%81%20%EC%96%B8%EA%B8%89%20%EB%B9%84%EC%9C%A8(%25)%22%2C%22data%22%3A%5B%2267.75%22%2C%2294.45%22%2C%2266.70%22%2C%2250.00%22%5D%7D%5D%7D%7D" alt="🔥 브랜드별 긍정적 언급 비율" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      <p class="small-text">* 위 차트는 QuickChart.io를 통해 생성된 이미지이며, 세부 데이터는 <a href="https://taesung01.github.io/youtube-analysis-form/dashboard.html" target="_blank">주간 YouTube Trend 스냅샷</a> 대시보드를 참조하세요.</p></div>
+
+      <div class="card card-analysis"><h3><span class="emoji">📊</span>유튜브 시청자 반응 분석</h3>
+        <p class="table-caption">주요 지표 (IT/전자 유튜버 대상)</p><table><thead><tr><th>지표</th><th>값</th></tr></thead><tbody>
+        <tr><td>총 조회수</td><td>3,667,618</td></tr><tr><td>총 좋아요</td><td>43,075</td></tr>
+        <tr><td>총 댓글수</td><td>16,095</td></tr><tr><td>좋아요/조회수 비율</td><td>1.17%</td></tr>
+        </tbody></table><div class="ai-comment">시청자 반응은 조회수 3.6백만으로 높은 관심을 보이며, 댓글수 1.6만여 개가 활발한 참여를 나타냅니다.  
+좋아요 비율 1.17%는 평균 수준이므로, 콘텐츠를 더 흥미롭게 업로드하여 참여율을 높이세요.  
+LG전자는 댓글 분석을 통해 시청자 피드백을 수집하고, 제품 기능 개선에 활용하라.</div></div>
+
+      <div class="card card-analysis"><h3><span class="emoji">📅</span>요일별 게시 성과 분석</h3>
+        <p class="table-caption">유튜브 요일별 좋아요 분포 (IT/전자 유튜버)</p><table><thead><tr><th>요일</th><th>좋아요 수</th></tr></thead><tbody>
+        <tr><td>월요일</td><td>973 </td></tr><tr><td>화요일</td><td>9,273 </td></tr><tr><td>수요일</td><td>3,200 </td></tr><tr><td>목요일</td><td>19,051 <span class="highlight">(최고)</span></td></tr><tr><td>금요일</td><td>7,732 </td></tr><tr><td>토요일</td><td>1,782 </td></tr><tr><td>일요일</td><td>1,064 </td></tr>
+        </tbody></table><p class="table-caption" style="margin-top: 20px;">인스타그램 요일별 좋아요 분포</p><table><thead><tr><th>요일</th><th>좋아요 수</th></tr></thead><tbody>
+        <tr><td>월요일</td><td>0 </td></tr><tr><td>화요일</td><td>366 </td></tr><tr><td>수요일</td><td>811 </td></tr><tr><td>목요일</td><td>469,968 <span class="highlight">(최고)</span></td></tr><tr><td>금요일</td><td>1,896 </td></tr><tr><td>토요일</td><td>3,694 </td></tr><tr><td>일요일</td><td>0 </td></tr>
+        </tbody></table><div class="ai-comment">- 유튜브와 인스타그램 모두 목요일이 가장 높은 좋아요 성과를 보였습니다.
+- 따라서 최적의 게시 요일은 목요일로 판단됩니다.
+- 게시 전략으로 목요일에 주요 콘텐츠를 업로드하여 사용자 참여를 극대화하세요.</div></div>
+
+      <div class="card card-comment"><h3><span class="emoji">📌</span>해시태그별 참여율 분석</h3>
+        <p class="table-caption">상위 해시태그별 참여율 </p><table><thead><tr><th>해시태그</th><th>참여율</th><th>좋아요</th></tr></thead><tbody>
+        <tr><td>#VoicesofGalaxy <span class="highlight">(최고)</span></td><td>0.09%</td><td>5,562</td></tr><tr><td>#New갤럭시구독한정</td><td>0.03%</td><td>1,912</td></tr>
+        <tr><td>#삼성AITV</td><td>0.02%</td><td>7,748</td></tr><tr><td>#GalaxyS25Ultra</td><td>0.02%</td><td>1,382</td></tr><tr><td>#스위치2출시</td><td>0.01%</td><td>350</td></tr></tbody></table>
+        <div class="ai-comment">참여율 데이터가 있는 해시태그 분석 결과를 찾을 수 없습니다.</div>
+        <p class="small-text">* 참고: 실제 Detail한 해시태그 분석 결과는 첨부와 코멘트를 참조하세요.</p></div>
+
+      <div class="card card-comment"><h3><span class="emoji">💬</span>시청자 댓글 트렌드 분석</h3><p class="table-caption">댓글 감성 분석:</p>
+                      <div class="sentiment-bar-container">
+                        <div class="sentiment-bar sentiment-positive" style="width:30%" title="긍정 30%">30%</div>
+                        <div class="sentiment-bar sentiment-neutral" style="width:40%" title="중립 40%">40%</div>
+                        <div class="sentiment-bar sentiment-negative" style="width:30%" title="부정 30%">30%</div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 15px; padding: 0 5px;">
+                        <span style="color: #2ecc71;">■ 긍정</span><span style="color: #f39c12;">■ 중립</span><span style="color: #e74c3c;">■ 부정</span>
+                      </div><p class="table-caption" style="margin-top: 25px;">주요 언급 키워드:</p><table><thead><tr><th>키워드</th><th>언급 횟수 (AI 추정)</th></tr></thead><tbody><tr>
+                                <td><span class="keyword-tag">엑시노스</span></td>
+                                <td>20</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">MacBook</span></td>
+                                <td>15</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">가격</span></td>
+                                <td>12</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">RAM</span></td>
+                                <td>10</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">Apple</span></td>
+                                <td>8</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">아이패드</span></td>
+                                <td>7</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">삼성</span></td>
+                                <td>5</td>
+                              </tr></tbody></table><p class="small-text" style="margin-top: 5px;">* 언급 횟수는 AI 추정치입니다.</p><p class="table-caption" style="margin-top: 25px;">분석 대상 주요 영상 (상위 3개):</p>
+                      <ol class="comment-list"><li><a href="https://www.youtube.com/watch?v=mDrBq69ji3s" target="_blank" title="앗 맥북 아이폰보다 싸다! 애플의 99만원짜리 노트북 과연 괜찮을까?">앗 맥북 아이폰보다 싸다! 애플의 99만원짜리 노트북 과연 괜찮을까?</a> (잇섭)</li><li><a href="https://www.youtube.com/watch?v=ulVdcasl2D4" target="_blank" title="엑시노스가 왜 멀?쩡??하죠??">엑시노스가 왜 멀?쩡??하죠??</a> (UNDERkg)</li><li><a href="https://www.youtube.com/watch?v=2np_SSjPwCw" target="_blank" title="와....삼성 로봇청소기 신형 드.디.어 출시!">와....삼성 로봇청소기 신형 드.디.어 출시!</a> (귀곰)</li></ol><p class="table-caption" style="margin-top: 25px;">주요 질문/요청:</p>
+                      <ol class="comment-list"><li>맥북 네오 스팀 클로버핏 게임 돌릴수있나요?</li><li>m5맥스 영상도 올라오나요?</li><li>a18들어갔으면 아이폰에도 맥os설치가 가능할수 있으려나?</li><li>아이패드 에어 M5와 비교중인데 어떤게 좋을까요?</li><li>잇섭님 현대자동차 ccnc문제 다뤄주실수있나요?</li><li>악세사리는 전세대랑 호환되나요?</li><li>아이패드 에어26 m4모델 애플펜슬 프로 호환 되나유?</li></ol><p class="small-text" style="margin-top: 15px;">* 참고: 상위 유튜브 영상의 댓글을 기반으로 분석한 결과입니다.</p></div><div class="card card-suggestion"><h3><span class="emoji">💡</span>다음 주를 위한 제안</h3><p><strong>- 유튜브 협업 영상 제작:</strong><br>잇섭 채널과 협업하여 LG 그램 노트북의 가벼움과 성능을 강조하는 리뷰 영상을 제작하세요. 영상에서 잇섭이 실제 사용하며 장단점을 솔직하게 리뷰하도록 하며, 시청자 댓글 이벤트를 통해 LG 제품을 증정하는 프로모션을 추가하세요. 이 활동은 다음 주에 영상을 업로드하여 UNDERkg나 라이브렉스와의 네트워킹을 통해 확산시키는 방식으로 실행합니다.</p>
+
+<p><strong>- 인스타그램 사용자 참여 이벤트:</strong><br>인스타그램에서 THE BOYS나 코웨이 공식 계정을 참고하여 LG 가전 제품(예: LG 인verter 에어컨)을 활용한 '나의 여름 쿨링 루틴' 해시태그 챌린지를 진행하세요. 사용자가 자신의 일상을 촬영한 사진이나 동영상을 업로드하면 LG 제품을 선물로 주는 방식으로 참여를 유도하세요. 이 이벤트는 다음 주 초에 시작하여 1주일 동안 운영하며, Sony나 Miele의 유사 활동을 분석해 더 창의적인 콘텐츠를 추가합니다.</p>
+
+<p><strong>- 경쟁사 비교 콘텐츠 시리즈:</strong><br>유튜브와 인스타그램에서 애플이나 삼성전자와 비교하여 LG 스마트폰의 독보적인 AI 기능을 강조하는 시리즈 콘텐츠를 제작하세요. 예를 들어, 'LG vs. 삼성: 배터리 효율성 대결'이라는 주제로 짧은 영상이나 스토리를 업로드하며, 시청자 투표 이벤트를 통해 상호작용을 높이세요. 이 활동은 다음 주에 매일 하나의 콘텐츠를 게시하여 HP나 기타 브랜드의 활동을 모니터링하며 조정합니다.</p></div><div class="closing">이번 주 SNS 인사이트, 도움이 되셨나요? 추가로 궁금한 점이나 제안 있으면 언제든 말씀해주세요!<br>문의: AX Insight팀 (<a href="mailto:taesung01.lee@lge.com">taesung01.lee@lge.com</a>)<br><br><span style="font-size: 11px; color: #888;">P.S. 이 리포트는 AI 탐정이 자동 생성했어요! 문제가 있으면 테스에게 SOS!</span></div>
+      <p class="footer">이 리포트는 LG전자 AX Insight팀을 위해 자동 생성되었습니다.</p></div></body></html>
