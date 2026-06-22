@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📊 [AX Insight팀] 주간 SNS 트렌드 리포트 (6월 4주차)</title>
+      <style>
+        /* 이전과 동일한 스타일 */
+        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #333; }
+        .container { max-width: 800px; margin: 20px auto; background-color: #f4f7f9; padding: 15px; border-radius: 10px; }
+        .card { background-color: #ffffff; padding: 25px 30px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e0e6ed; border-left: 6px solid; }
+        .card-insight { border-left-color: #ff6f61; } .card-top-content { border-left-color: #4a90e2; }
+        .card-analysis { border-left-color: #50c878; } .card-charts { border-left-color: #8e44ad; }
+        .card-comment { border-left-color: #f1c40f; } .card-suggestion { border-left-color: #1abc9c; }
+        .card-competitor-summary { border-left-color: #fd7e14; } /* 경쟁사 요약 주황색 */
+
+        /* 새로운 스타일 추가 */
+        .report-title-box {
+          background-color: #e0f2f7; /* 연한 파란색 */
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .report-title {
+          color: #2c3e50;
+          font-size: 26px;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        h3 { color: #ffffff; background-color: #5d6d7e; padding: 10px 15px; margin: -25px -30px 20px -30px; border-radius: 8px 8px 0 0; font-size: 18px; font-weight: 600; display: flex; align-items: center; }
+        .card-insight h3 { background-color: #ff6f61; } .card-top-content h3 { background-color: #4a90e2; }
+        .card-analysis h3 { background-color: #50c878; } .card-charts h3 { background-color: #8e44ad; }
+        .card-comment h3 { background-color: #f1c40f; color: #555;} .card-suggestion h3 { background-color: #1abc9c; }
+        .card-competitor-summary h3 { background-color: #fd7e14; } /* 경쟁사 요약 주황색 */
+
+        h4 { font-size: 16px; margin: 25px 0 12px 0; color: #ffffff; font-weight: 600; border-bottom: none; padding: 8px 15px; background-color: #a5b1c2; border-radius: 6px 6px 0 0;} /* h4 스타일 개선 */
+        p, li, td, th { font-size: 14px; color: #495057; line-height: 1.75; }
+        ul { list-style-type: none; padding: 0; margin: 0; }
+        .subsection-content { background-color: #ffffff; padding: 15px 20px; border-radius: 0 0 6px 6px; border: 1px solid #e0e6ed; border-top: none; margin-bottom: 25px; margin-top: -12px;} /* 서브섹션 박스 */
+        .subsection-content ul { padding-left: 0px;} /* 내부 ul 패딩 제거 */
+        li { margin-bottom: 15px; padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid #f1f3f5;}
+        li:last-child { border-bottom: none; margin-bottom: 0;}
+        li::before { content: '✔'; color: #3498db; position: absolute; left: 0; top: 11px; font-size: 14px; font-weight: bold; }
+
+        a { color: #2980b9; text-decoration: none; font-weight: 500; } a:hover { text-decoration: underline; color: #1f618d; }
+        .greeting, .closing { text-align: left; font-size: 14px; margin-bottom: 25px; line-height: 1.7; }
+        .closing { margin-top: 30px; font-size: 12px; border-top: 1px solid #d5dbdb; padding-top: 20px; color: #7f8c8d; }
+        .footer { text-align: center; color: #aab7c4; font-size: 11px; margin-top: 30px; }
+        .highlight { background-color: #fef9e7; padding: 2px 5px; border-radius: 4px; font-weight: 600; color: #b7950b; border: 1px solid #fdeca6;}
+        .sub-link-box { background-color: #eafaf1; padding: 12px 18px; border-radius: 6px; margin: 15px 0 20px 0; font-size: 13px; border: 1px solid #a3e4d7; }
+        .sub-link-box a { color: #16a085; font-weight: 600;}
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 15px; border: 1px solid #dee2e6; border-radius: 6px; overflow: hidden; }
+        th, td { border-bottom: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-size: 13px; vertical-align: top; } /* vertical-align 추가 */
+        td:first-child { color: #333; font-weight: 500;}
+        th { background-color: #f1f3f5; font-weight: 600; color: #495057; border-top: none; border-bottom-width: 2px;}
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background-color: #f8f9fa; }
+        .table-caption { font-size: 15px; font-weight: 600; margin-bottom: 10px; color: #34495e; }
+        .ai-comment { background-color: #f8f9fa; border-left: 4px solid #adb5bd; padding: 12px 18px; margin-top: 18px; font-size: 13px; border-radius: 4px; line-height: 1.65; color: #495057; }
+        .emoji { font-size: 1.1em; margin-right: 10px; vertical-align: -1px; }
+        .small-text { font-size: 12px; color: #868e96; margin-top: 6px; display: block; }
+        .keyword-tag { background-color: #e9ecef; padding: 4px 10px; border-radius: 15px; font-size: 12px; margin-right: 6px; display: inline-block; margin-bottom: 6px; color: #495057; border: 1px solid #ced4da;}
+        /* 댓글 시각화 스타일 */
+        .sentiment-bar-container { display: flex; height: 22px; border-radius: 5px; overflow: hidden; margin-bottom: 8px; border: 1px solid #ced4da; background-color: #e9ecef; }
+        .sentiment-bar { display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 600; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+        .sentiment-positive { background-color: #2ecc71; } /* 초록 */
+        .sentiment-neutral { background-color: #f39c12; color: #fff;} /* 주황 */
+        .sentiment-negative { background-color: #e74c3c; } /* 빨강 */
+        .comment-list { list-style-type: decimal; padding-left: 20px; margin-top: 8px; }
+        .comment-list li { margin-bottom: 8px; padding-left: 8px; border-bottom: none; line-height: 1.6; }
+        .comment-list li::before { content: counter(list-item) ". "; counter-increment: list-item; position: absolute; left: -5px; top: 1px; color: #95a5a6; font-size: 13px; font-weight: normal;}
+        .ref-video-link { font-size: 11px; color: #7f8c8d; margin-left: 5px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; } /* 관련 영상 링크 스타일 */
+
+      </style></head><body><div class="container">
+        <div class="report-title-box">
+          <h2 class="report-title">📊 [AX Insight팀] 주간 SNS 트렌드 리포트 (6월 4주차)</h2>
+        </div>
+        <p class="greeting">안녕하세요, AX Insight팀 SNS 탐정입니다! 🕵️<br>지난주 유튜브와 인스타그램에서 뜨거웠던 콘텐츠와 트렌드를 파헤쳐 왔어요!<br>주간 SNS 트렌드가 어땠는지 LG전자와 경쟁사의 주요 움직임을 함께 살펴보시죠~</p>
+
+        <div class="card card-insight"><h3><span class="emoji">⚡</span>금주의 인사이트</h3><p>전자/IT 인기 유튜버들의 유튜브 데이터를 분석한 결과, 가장 높은 조회수를 기록한 YouTube 영상의 제목은 "역대급 티빙 개인정보 유출사태 정리. 이번 해킹은 진짜 너무 위험합니다..."이며 조회수는 673,873회입니다. 
+이번 주 IT 유튜버 콘텐츠는 개인정보 유출과 보안 이슈가 압도적으로 높은 관심을 받으며, LG전자는 프리미엄 가전과 IT 기기의 보안 기능을 강조하는 콘텐츠를 적극 제작해야 합니다. 
+인스타그램에서는 총 32개 게시물에서 56,259개의 좋아요를 기록했으나 참여율이 다소 정체되어 있어, LG전자 공식 계정은 사용자 생성 콘텐츠(UGC)를 활용한 리얼 후기 캠페인을 통해 참여도를 30% 이상 끌어올릴 필요가 있습니다. 
+경쟁사 분석 결과 삼성전자와 애플이 각각 153개 영상 중 상당 부분을 차지하며 제품 비교 콘텐츠를 주도하고 있어, LG전자는 차별화된 AI 가전 기술과 에너지 효율성을 앞세운 헤드투헤드 비교 영상을 전략적으로 배포해야 합니다. 
+특히 잇섭 채널처럼 신뢰도 높은 IT 유튜버와의 협업을 확대하여 LG ThinQ 앱의 강화된 보안 기능과 프라이버시 보호 정책을 자연스럽게 노출하는 것이 효과적입니다. 
+전반적으로 소비자들의 보안 불안이 높아진 현 시점에서 LG전자는 ‘안전하고 신뢰할 수 있는 프리미엄 가전’이라는 브랜드 이미지를 강화하는 방향으로 모든 SNS 콘텐츠를 재정렬해야 할 것입니다.</p></div>
+
+      <div class="card card-top-content"><h3><span class="emoji">🏆</span>상위 콘텐츠</h3>
+        <div class="sub-link-box">💡 Detail한 유튜브 콘텐츠 분석은 <a href="https://taesung01.github.io/youtube-analysis-form/" target="_blank">[AX Insight팀] YouTube 동영상 분석 Agent</a> 로 진행해 주세요!</div>
+        <h4><span class="emoji">📺</span>주목할 유튜브 영상 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. 역대급 티빙 개인정보 유출사태 정리. 이번 해킹은 진짜 너무 위험합니다... (잇섭)</strong><span class="small-text">- 업로드: 2026.06.19 | 조회수: 673,873 | 좋아요: 15,188 | 댓글: 3,141</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+🔹 전반부
+
+영상은 티빙 해킹 사태의 심각성을 알리기 위해 시작됩니다. 업로더는 최근 발생한 개인정보 유출 사건이 이전 사례와 달리 일반인의 대응이 거의
+불가능하다는 점을 강조하며 주제를 소개합니다. 오프닝에서는 티빙의 보안 문제와 개인정보가 공공재처럼 노출되는 현실을 지적하며 시청자의 주의를
+환기합니다.
+
+🔹 중반부
+
+본론에서는 티빙 개인정보 유출사태의 구체적인 경위와 CI 유출 가능성을 분석합니다. 해킹으로 인해 유출된 정보의 종류와 규모를 설명하며, 어떤
+처벌이 내려질 수 있는지 법적 측면을 다룹니다. 이어 피해 최소화 방안을 제시하며, 사용자가 즉시 취할 수 있는 조치와 불필요한 정보수집
+문제까지 포괄적으로 논의합니다.
+
+🔹 후반부
+
+결론에서는 티빙 사태의 핵심 위험성을 다시 정리하고, 개인정보 보호의 중요성을 강조합니다. 향후 비슷한 해킹 사고를 예방하기 위한 제언과 함께
+시청자가 스스로 정보를 관리하는 방법을 제안하며 영상을 마무리합니다. 전체적으로 티빙 사례가 보여주는 보안 취약점을 경고하는 내용으로 끝납니다.
+
+
+📝 결론 및 제언
+
+본 영상은 티빙의 대규모 개인정보 유출 사고를 중점적으로 다루며, 사용자 대응이 어렵다는 점과 보안 취약점을 경고합니다. 시청자는 해킹 위험
+인식 제고와 개인정보 보호 중요성을 핵심 인사이트로 얻을 수 있습니다. 티빙 관련 기업에는 보안 강화와 투명한 피해 대응이 요구되며, 유사
+서비스 제공사에도 보안 점검이 필요합니다. </div><a href="https://www.youtube.com/watch?v=2djZwuRb5K8" target="_blank">영상 보기 &rarr;</a></li><li><strong>2. 해외에서 난리라는 15만원짜리 화면 없는 구글 밴드 (UNDERkg)</strong><span class="small-text">- 업로드: 2026.06.16 | 조회수: 248,822 | 좋아요: 2,290 | 댓글: 437</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+🔹 전반부
+
+제공된 데이터에는 자막 텍스트가 포함되어 있지 않아 영상의 주제와 목표를 구체적으로 분석할 수 없습니다. 타임스탬프만 나열되어 있어 시청자의
+호기심을 유발하는 핵심 질문이나 문제 제기를 확인하기 어렵습니다. 화면 없는 구글 밴드 제품에 대한 해외 반응을 다룰 것으로 예상되나, 실제
+논리 전개 과정은 파악되지 않습니다.
+
+🔹 중반부
+
+자막 내용이 부재하여 본론의 주요 논점, 데이터, 시연 장면 또는 핵심 사례를 구체적으로 짚을 수 없습니다. 15만원 가격대의 제품 특징과 해외
+인기 요인이 어떻게 발전되는지 설명할 근거가 없습니다. 화면 없는 디자인과 구글 생태계 연동에 대한 분석이 예상되지만, 사실 기반 요약이
+불가능합니다.
+
+🔹 후반부
+
+제공된 정보 내에서 최종 결론이나 시청자에게 남기는 핵심 메시지를 확인할 수 없습니다. 향후 전망이나 제안 사항 또한 자막 텍스트가 없어
+종합적으로 정리하기 어렵습니다. 추가 자막 데이터가 필요합니다.
+
+
+📝 결론 및 제언
+
+본 영상은 구글의 화면 없는 웨어러블 밴드 제품에 대한 해외 반응을 다루는 콘텐츠로, LG전자와는 전혀 관련이 없습니다. 시청자는 새로운 폼팩터
+웨어러블 트렌드에 대한 정보를 얻을 수 있으며, 현재 LG전자 웨어러블 사업과 직접적인 영향은 없습니다. </div><a href="https://www.youtube.com/watch?v=USM4QxoUHD8" target="_blank">영상 보기 &rarr;</a></li><li><strong>3. 🚨지금 난리 난 ’티빙·CU택배 해킹‘ 추가 피해 막는 법!(고정댓글 참고) (주여니)</strong><span class="small-text">- 업로드: 2026.06.15 | 조회수: 239,269 | 좋아요: 7,372 | 댓글: 185</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+
+🔹 전반부
+
+영상은 티빙·CU택배 해킹 사태로 인한 개인정보 유출 피해가 빠르게 확산되고 있음을 강조하며 시작합니다. 시청자에게 추가 피해 방지의 중요성을
+알리고, 즉시 실천할 수 있는 구체적인 대응 방법을 소개합니다. 도입부에서는 대포폰 개통 및 계좌·카드 무단 발급 등의 2차 피해 사례를
+언급하며 문제의 심각성을 전달합니다.
+
+
+🔹 중반부
+
+PASS 앱을 활용한 명의도용 방지 설정, 금융소비자 정보포털 파인(fine.fss.or.kr)을 통한 계좌·카드 조회,
+올크레딧·나이스평가정보의 신용조회 중지 신청 등 1~4단계 대응 방법을 상세히 안내합니다. 이어서 개인정보 포털에서 다크웹 유출 여부를 확인하는
+5단계와 법무법인 지향·세담의 집단 소송 참여 방법까지 실전 중심으로 설명합니다.
+
+
+🔹 후반부
+
+영상은 비밀번호 변경을 가장 중요한 예방 조치로 강조하며, 여러 사이트에서 동일하게 사용하던 비밀번호를 즉시 교체할 것을 강력히 권고합니다.
+컴퓨터나 스마트폰 조작이 서툰 부모님·지인들에게 내용을 공유해 달라고 요청하며, 추가 피해 없이 안전하게 해결되기를 바라는 메시지로
+마무리합니다. 마지막으로 고정 댓글에 정리된 직통 링크를 활용해 실시간으로 대응할 것을 안내합니다.
+
+
+📝 결론 및 제언
+
+해당 영상은 티빙·CU택배 해킹으로 인한 개인정보 유출 피해를 막기 위한 실질적인 대응 방법을 안내합니다. PASS 앱과 파인 포털 활용,
+신용조회 중지 신청 등 구체적인 5단계 조치를 제시하며 시청자의 즉각적 행동을 유도합니다. LG전자와는 전혀 관련이 없는 콘텐츠이므로 해당
+기업에 미치는 영향은 없습니다. 해킹 피해 확산 방지라는 공익적 메시지가 전달되어 시청자에게 유용한 예방 인사이트를 제공합니다. </div><a href="https://www.youtube.com/watch?v=XXNFjtEjFQs" target="_blank">영상 보기 &rarr;</a></li></ul></div>
+
+        <h4><span class="emoji">📸</span>인스타그램 핫 포스트 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. Creator to Creator (When two Hollywood besties, Karolina Wydra and Caitríona Balfe, sit down to talk about navigating Hollywood, friendship, and life in the entertainment industry, you listen.🎙️✨
+
+Watch the full convo on the Creator to Creator YouTube & podcast channels at link in bio 
+
+Photo Credit: Peter Fisher (@pet__fish))</strong><span class="small-text">- 업로드: 2026.06.17 | 좋아요: 20,815 | 댓글: 227</span><a href="https://www.instagram.com/sony/" target="_blank">게시물 보기 &rarr;</a></li><li><strong>2. 다이슨 코리아 (새로운 툴로 업그레이드된 NEW 올인원 에어랩 2x
+⠀
+NEW 코안다2x 콘 배럴
+뿌리까지 손쉬운 스타일링이 가능한
+콘형 디자인으로 탱글하고 선명한 컬 완성
+⠀
+스타일의 끝, 다이슨
+⠀
+#다이슨 #다이슨뷰티 #다이슨장원영 #다이슨에어랩 #에어랩 #에어랩2x #올인원스타일)</strong><span class="small-text">- 업로드: 2026.06.19 | 좋아요: 16,982 | 댓글: 187</span><a href="https://www.instagram.com/dyson_kr/" target="_blank">게시물 보기 &rarr;</a></li><li><strong>3. Samsung Korea 삼성전자 (⠀
+국민께 받은 사랑
+진심을 다해 보답하겠습니다
+
+🎊국민과 함께, 삼성전자 감사 페스티벌 (2026.06.08-07.05)🎉
+
+🎁 혜택 1. 제품 구매 시 구매금액의 20% 디지털 온누리상품권 증정 
+* 동일 품목당 2대까지 신청 가능, 데이코, 하만, 소모품, 액세서리 등 일부 제품 제외
+* 이동통신사 구매 제품은 모델별 정액으로 지급 (모델별 지급금액은 삼성닷컴에서 확인)
+
+🎁 혜택 2. 국민께 봉사하는 K-Hero 분들께 온누리상품권에 더해 10% 추가 혜택
+* K-Hero: 군인 및 경찰 • 소방 • 교정공무원
+* 삼성전자 패밀리몰에서 대상 모델 구매금액의 10% 추가 혜택 (구독 제외)
+
+🎁 혜택 3. AI 구독클럽 6개월 구독료를 삼성전자 멤버십 포인트로 지원
+* PC/Tab/모니터 4년, 로봇청소기 5년, 그 외 TV 및 가전품목 6년 가입 한정 (스마트폰 제외)
+
+행사 관련 자세한 내용은 삼성닷컴을 참조해주세요
+https://www.samsung.com/sec/event/thankyoufestival-notice/
+
+#국민과함께삼성전자감사페스티벌
+#삼성전자 #SamsungKorea
+
+[혜택 1. 유의사항]
+※ 만 14세 이상의 대한민국 국민 또는 외국인 등록증과 개인명의의 휴대폰 번호로 본인인증이 가능한 외국인 고객
+※ 구매 취소 시 디지털 온누리상품권은 전액 회입됩니다)</strong><span class="small-text">- 업로드: 2026.06.16 | 좋아요: 740 | 댓글: 15</span><a href="https://www.instagram.com/samsungkorea/" target="_blank">게시물 보기 &rarr;</a></li></ul></div>
+        <h4><span class="emoji">🔥</span>주요 경쟁사 콘텐츠 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. 기타: 하루종일 모니터 보는 공대생 눈관리 꿀템👀#안구건조증 #꿀팁 #뷰티꿀팁</strong><span class="small-text">- 채널: 민유지 Ji yumin | 업로드: 2026.06.20 | 조회수: 1,043,081 | 좋아요: 22,764 | 댓글: 78</span><a href="https://www.youtube.com/watch?v=-HhnIi_e5YQ" target="_blank">영상 보기 &rarr;</a></li><li><strong>2. 삼성전자: 아내 몰래 컴퓨터를 사면 생기는 일ㅋㅋ</strong><span class="small-text">- 채널: 리뷰띠 | 업로드: 2026.06.20 | 조회수: 248,499 | 좋아요: 2,366 | 댓글: 84</span><a href="https://www.youtube.com/watch?v=LivX6OpjUZE" target="_blank">영상 보기 &rarr;</a></li><li><strong>3. TCL: “제습기 이중에서 고르세요!” 2026 제습기 비교추천🔥 용도별 Best3｜제습기추천｜가성비제습기｜위닉스｜에어메이드｜미로｜TCL｜롯데알미늄｜원룸제습기｜옷방제습기｜여름제습기</strong><span class="small-text">- 채널: 리뷰머신 | 업로드: 2026.06.20 | 조회수: 103,177 | 좋아요: 189 | 댓글: 207</span><a href="https://www.youtube.com/watch?v=IkBPnx3RtTg" target="_blank">영상 보기 &rarr;</a></li></ul></div>
+      </div>
+
+      
+    <div class="card card-analysis"> <h3><span class="emoji">📈</span> 주간 YouTube 경쟁사 분석</h3> <h4 style="margin-top: 0; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">주요 경쟁사 동향 (Top 7 언급량 기준)</h4>
+      <table style="width:100%; border-collapse:collapse; font-size:13px;"><thead><tr style="background-color:#f1f3f5;"><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">브랜드</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">언급량</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 조회수/좋아요</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 좋아요/댓글</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 댓글/참여율</th></tr></thead><tbody><tr style="background-color: #e9f5ff;"><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">LG (기준)</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">112</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">367.01</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">4.19</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">63.73</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">기타</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">339</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">70.67</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">22.59</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">37.18</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">삼성전자</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">61</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">195.28</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">6.89</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">29.31</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">애플</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">28</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">228.23</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">4.78</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">27.97</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">HP</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">27</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">142.67</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">18.79</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">25.68</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">Apple</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">18</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">76.67</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">7.77</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">18.89</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">샤오미</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">10</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">460.89</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">1.44</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">195.47</td></tr></tbody></table>
+
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">주간 트렌드 분석</h4>
+      <p>**주간 유튜브 트렌드 분석:**
+
+이번 주 유튜브에서는 LG전자의 **마이크로 RGB OLED TV(100인치)**와 **탁상용 소형 공기청정기(HMA-S0101AW)** 콘텐츠가 상위권을 차지하며, 기술 혁신과 생활가전 영역에서 상당한 관심을 끌고 있습니다. 
+
+다만 상위 키워드가 ‘잇섭’으로 완전히 장악된 상황에서 LG전자 자체 채널의 바이럴 영향력은 아직 제한적이며, 경쟁사 대비 **프리미엄 디스플레이와 컴팩트 가전**이라는 두 축을 더 적극적으로 크리에이터 협업과 숏폼 콘텐츠로 확대해야 할 필요성이 보입니다.</p>
+
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">분석 기반 추천사항</h4>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13px; list-style-type: disc;"><li>**LG전자 추천 소셜 미디어 전략**</li><li></li><li><li>삼성전자(참여율 1.04%)와 HP(참여율 1.34%) 대비 낮은 참여율(0.72%)을 극복하기 위해, 제품 사용 장면을 담은 짧은 릴스(Reels)와 사용자 생성 콘텐츠(UGC) 캠페인을 대폭 확대한다. 특히 #LG와함께하는일상 해시태그를 활용해 소비자가 직접 참여할 수 있는 챌린지 콘텐츠를 주 3회 이상 제작·배포한다.</li></li><li></li><li><li>긍정율이 가장 높은 HP(92.59%)와 애플(87.23%)의 강점을 분석한 결과, ‘신뢰’와 ‘프리미엄’ 이미지가 핵심이다. 이에 LG는 ‘LG만의 차별화된 혁신 기술’(예: AI, sustainability, 디자인)을 집중적으로 보여주는 교육형·스토리텔링 콘텐츠를 강화하고, 전문가 리뷰어 및 인플루언서와의 협업을 늘려 신뢰도를 제고한다.</li></li><li></li><li><li>‘기타’ 브랜드의 압도적인 언급량(339)을 고려해, 경쟁사 제품과 LG 제품을 직접 비교하는 ‘LG vs Others’ 시리즈 콘텐츠를 유머러스하고 객관적인 톤으로 제작한다. 특히 참여율이 높은 TikTok과 Instagram Reels를 주요 채널로 활용해 젊은 층의 바이럴 확산을 노린다.</li></li></ul>
+
+      <div class="sub-link-box" style="margin-top: 20px;">🔗 <a href="https://taesung01.github.io/youtube-analysis-form/dashboard.html" target="_blank">주간 YouTube Trend 스냅샷 대시보드</a><br><span style="font-size: 12px; color: #555;">브랜드별 SNS 상세비교 지표는 위 대시보드를 참조하세요!</span></div>
+    </div>
+
+      <div class="card card-charts"><h3><span class="emoji">⚔️</span> 경쟁사 분석 차트</h3>
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">📊 브랜드별 SNS 언급량 비교</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22HP%22%2C%22Apple%22%2C%22%EC%83%A4%EC%98%A4%EB%AF%B8%22%2C%22TCL%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EC%96%B8%EA%B8%89%EB%9F%89%22%2C%22data%22%3A%5B339%2C61%2C28%2C27%2C18%2C10%2C8%5D%7D%5D%7D%7D" alt="📊 브랜드별 SNS 언급량 비교" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">👀 브랜드별 SNS 참여율</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22HP%22%2C%22Apple%22%2C%22%EC%83%A4%EC%98%A4%EB%AF%B8%22%2C%22TCL%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EC%B0%B8%EC%97%AC%EC%9C%A8(%25)%22%2C%22data%22%3A%5B%222.11%22%2C%221.04%22%2C%220.96%22%2C%221.34%22%2C%221.93%22%2C%220.52%22%2C%220.78%22%5D%7D%5D%7D%7D" alt="👀 브랜드별 SNS 참여율" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">🔥 브랜드별 긍정적 언급 비율</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22HP%22%2C%22Apple%22%2C%22%EC%83%A4%EC%98%A4%EB%AF%B8%22%2C%22TCL%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EA%B8%8D%EC%A0%95%EC%A0%81%20%EC%96%B8%EA%B8%89%20%EB%B9%84%EC%9C%A8(%25)%22%2C%22data%22%3A%5B%2275.69%22%2C%2263.00%22%2C%2287.23%22%2C%2292.59%22%2C%2242.86%22%2C%22100.00%22%2C%22100.00%22%5D%7D%5D%7D%7D" alt="🔥 브랜드별 긍정적 언급 비율" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      <p class="small-text">* 위 차트는 QuickChart.io를 통해 생성된 이미지이며, 세부 데이터는 <a href="https://taesung01.github.io/youtube-analysis-form/dashboard.html" target="_blank">주간 YouTube Trend 스냅샷</a> 대시보드를 참조하세요.</p></div>
+
+      <div class="card card-analysis"><h3><span class="emoji">📊</span>유튜브 시청자 반응 분석</h3>
+        <p class="table-caption">주요 지표 (IT/전자 유튜버 대상)</p><table><thead><tr><th>지표</th><th>값</th></tr></thead><tbody>
+        <tr><td>총 조회수</td><td>2,565,550</td></tr><tr><td>총 좋아요</td><td>45,648</td></tr>
+        <tr><td>총 댓글수</td><td>6,819</td></tr><tr><td>좋아요/조회수 비율</td><td>1.78%</td></tr>
+        </tbody></table><div class="ai-comment">**분석 코멘트:**
+
+시청자 반응은 전체적으로 양호하나, 좋아요율 1.78%는 IT 콘텐츠 평균 대비 다소 낮은 수준입니다.  
+댓글 참여도가 높아(6,819개) 제품에 대한 관심과 의견이 활발하게 나타나고 있습니다.  
+LG전자는 유튜버 리뷰 영상에서 자주 지적되는 부분을 빠르게 개선하고, 긍정적 요소를 강조한 추가 콘텐츠를 제작하는 것을 추천합니다.</div></div>
+
+      <div class="card card-analysis"><h3><span class="emoji">📅</span>요일별 게시 성과 분석</h3>
+        <p class="table-caption">유튜브 요일별 좋아요 분포 (IT/전자 유튜버)</p><table><thead><tr><th>요일</th><th>좋아요 수</th></tr></thead><tbody>
+        <tr><td>월요일</td><td>14,300 </td></tr><tr><td>화요일</td><td>2,290 </td></tr><tr><td>수요일</td><td>5,066 </td></tr><tr><td>목요일</td><td>6,565 </td></tr><tr><td>금요일</td><td>17,427 <span class="highlight">(최고)</span></td></tr><tr><td>토요일</td><td>0 </td></tr><tr><td>일요일</td><td>0 </td></tr>
+        </tbody></table><p class="table-caption" style="margin-top: 20px;">인스타그램 요일별 좋아요 분포</p><table><thead><tr><th>요일</th><th>좋아요 수</th></tr></thead><tbody>
+        <tr><td>월요일</td><td>130 </td></tr><tr><td>화요일</td><td>1,309 </td></tr><tr><td>수요일</td><td>33,696 <span class="highlight">(최고)</span></td></tr><tr><td>목요일</td><td>3,780 </td></tr><tr><td>금요일</td><td>17,325 </td></tr><tr><td>토요일</td><td>12 </td></tr><tr><td>일요일</td><td>7 </td></tr>
+        </tbody></table><div class="ai-comment">**요일별 좋아요 분석 코멘트:**
+
+- 유튜브는 금요일에 좋아요가 가장 높고, 인스타그램은 수요일에 최고 성과를 보입니다.
+- 플랫폼별 최적 게시일이 다르기 때문에 요일에 맞춰 콘텐츠를 분리해 운영하는 것이 효과적입니다.
+- 수요일에는 인스타그램 위주로, 금요일에는 유튜브 콘텐츠를 집중 게시하며 교차 홍보를 활용하세요.</div></div>
+
+      <div class="card card-comment"><h3><span class="emoji">📌</span>해시태그별 참여율 분석</h3>
+        <p class="table-caption">상위 해시태그별 참여율 </p><table><thead><tr><th>해시태그</th><th>참여율</th><th>좋아요</th></tr></thead><tbody>
+        <tr><td>#VoicesofGalaxy <span class="highlight">(최고)</span></td><td>0.09%</td><td>5,562</td></tr><tr><td>#New갤럭시구독한정</td><td>0.03%</td><td>1,912</td></tr>
+        <tr><td>#삼성AITV</td><td>0.02%</td><td>7,748</td></tr><tr><td>#GalaxyS25Ultra</td><td>0.02%</td><td>1,382</td></tr><tr><td>#스위치2출시</td><td>0.01%</td><td>350</td></tr></tbody></table>
+        <div class="ai-comment">해시태그 분석 데이터를 찾을 수 없습니다. (InstagramAnalysis 시트 확인 필요)</div>
+        <p class="small-text">* 참고: 실제 Detail한 해시태그 분석 결과는 첨부와 코멘트를 참조하세요.</p></div>
+
+      <div class="card card-comment"><h3><span class="emoji">💬</span>시청자 댓글 트렌드 분석</h3><p class="table-caption">댓글 감성 분석:</p>
+                      <div class="sentiment-bar-container">
+                        <div class="sentiment-bar sentiment-positive" style="width:12%" title="긍정 12%">12%</div>
+                        <div class="sentiment-bar sentiment-neutral" style="width:28%" title="중립 28%">28%</div>
+                        <div class="sentiment-bar sentiment-negative" style="width:60%" title="부정 60%">60%</div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 15px; padding: 0 5px;">
+                        <span style="color: #2ecc71;">■ 긍정</span><span style="color: #f39c12;">■ 중립</span><span style="color: #e74c3c;">■ 부정</span>
+                      </div><p class="table-caption" style="margin-top: 25px;">주요 언급 키워드:</p><table><thead><tr><th>키워드</th><th>언급 횟수 (AI 추정)</th></tr></thead><tbody><tr>
+                                <td><span class="keyword-tag">해킹</span></td>
+                                <td>14</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">개인정보</span></td>
+                                <td>13</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">쿠팡</span></td>
+                                <td>8</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">카카오페이</span></td>
+                                <td>6</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">티빙</span></td>
+                                <td>5</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">줌버튼</span></td>
+                                <td>5</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">루나</span></td>
+                                <td>5</td>
+                              </tr></tbody></table><p class="small-text" style="margin-top: 5px;">* 언급 횟수는 AI 추정치입니다.</p><p class="table-caption" style="margin-top: 25px;">분석 대상 주요 영상 (상위 3개):</p>
+                      <ol class="comment-list"><li><a href="https://www.youtube.com/watch?v=2djZwuRb5K8" target="_blank" title="역대급 티빙 개인정보 유출사태 정리. 이번 해킹은 진짜 너무 위험합니다...">역대급 티빙 개인정보 유출사태 정리. 이번 해킹은 진짜 너무 위험합니다...</a> (잇섭)</li><li><a href="https://www.youtube.com/watch?v=USM4QxoUHD8" target="_blank" title="해외에서 난리라는 15만원짜리 화면 없는 구글 밴드">해외에서 난리라는 15만원짜리 화면 없는 구글 밴드</a> (UNDERkg)</li><li><a href="https://www.youtube.com/watch?v=XXNFjtEjFQs" target="_blank" title="🚨지금 난리 난 ’티빙·CU택배 해킹‘ 추가 피해 막는 법!(고정댓글 참고)">🚨지금 난리 난 ’티빙·CU택배 해킹‘ 추가 피해 막는 법!(고정댓글 참고)</a> (주여니)</li></ol><p class="table-caption" style="margin-top: 25px;">주요 질문/요청:</p>
+                      <ol class="comment-list"><li>CI DI가 암호화 안된 상태로 털린거는...피해자 입장에서 뭐 어떻게 대처를 할 수가 있는거죠?</li><li>이번달꺼 결제 했는데 해지 해야 할까요?</li><li>혹시 티빙 중국자본이가여?</li><li>이번에 창업털린거보면 뭨ㅋㅋㅋㅋㅋㅋ</li><li>베타 깔아서 클린업 기능 써보려고 했는데 RAW 파일은 편집 눌러도 툴 아이콘 자체가 안뜨더라구요. 저만 그런건지....</li><li>줌버튼 달그락 거리는 소리는 혹시 사용하셨던 제품에는 없었을까요? 인스타에서 제대로 교환 및 처리가 가능할지?</li><li>현재 줌레버 달깍 소음으로 인한 이슈가 상당수 구매자 분들에게서 발생하고 있습니다. 인스타360 QC에 상당히 실망중입니다.</li></ol><p class="small-text" style="margin-top: 15px;">* 참고: 상위 유튜브 영상의 댓글을 기반으로 분석한 결과입니다.</p></div><div class="card card-suggestion"><h3><span class="emoji">💡</span>다음 주를 위한 제안</h3>**다음 주 LG전자 추천 소셜 미디어 활동 3가지**
+
+<p><strong>- [잇섭 콜라보 콘텐츠 기획]:</strong><br>인기 IT 유튜버 ‘잇섭’과 협업하여 LG 그램 2025 신제품을 활용한 ‘진짜 가벼운 노트북 라이프’ 영상을 제작합니다. 잇섭의 일상 브이로그 스타일로 출장, 카페, 이동 중 그램 사용 장면을 자연스럽게 담아 8~12분 분량의 영상을 업로드하고, 동시에 LG전자 공식 유튜브와 인스타그램 릴스용 60초 하이라이트 영상도 제작합니다. 영상 말미에 잇섭의 솔직한 제품 평가와 함께 LG 그램 구매 링크를 노출하여 전환율을 높입니다.</p>
+
+<p><strong>- [Creator to Creator 크로스 릴스 챌린지]:</strong><br>인스타그램 인기 계정 ‘Creator to Creator’와 함께 “나의 창작 워크플로우” 릴스 챌린지를 진행합니다. LG 그램과 LG 울트라PC를 사용해 콘텐츠를 제작하는 크리에이터들의 실제 작업 과정을 15초 릴스로 공유하도록 유도하며, LG전자 공식 계정(@lg_korea)에서 참여자를 모집하고 우수 참여작 5팀을 선정해 LG 그램을 경품으로 증정합니다. 다이슨 코리아 계정과도 자연스러운 크로스 프로모션을 진행하여 노출을 극대화합니다.</p>
+
+<p><strong>- [경쟁사 비교 ‘진짜 솔직 리뷰’ 시리즈 기획]:</strong><br>UNDERkg, 주여니 등 IT 유튜버들과 함께 Apple MacBook Air, Samsung Galaxy Book, Dell XPS와 LG 그램을 직접 비교하는 ‘진짜 솔직 비교 리뷰’ 콘텐츠를 3편 제작합니다. 무게·배터리·성능·가격을 중심으로 객관적 데이터를 기반으로 비교하며, LG 그램의 압도적인 가벼움과 휴대성을 강조합니다. 각 영상은 유튜버 본인 채널과 LG전자 공식 채널에 동시에 업로드하고, 인스타그램 릴스와 숏츠로 30초 핵심 비교 장면을 추가로 배포하여 바이럴 효과를 노립니다.</p></div><div class="closing">이번 주 SNS 인사이트, 도움이 되셨나요? 추가로 궁금한 점이나 제안 있으면 언제든 말씀해주세요!<br>문의: AX Insight팀 (<a href="mailto:taesung01.lee@lge.com">taesung01.lee@lge.com</a>)<br><br><span style="font-size: 11px; color: #888;">P.S. 이 리포트는 AI 탐정이 자동 생성했어요! 문제가 있으면 테스에게 SOS!</span></div>
+      <p class="footer">이 리포트는 LG전자 AX Insight팀을 위해 자동 생성되었습니다.</p></div></body></html>
