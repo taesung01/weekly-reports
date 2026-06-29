@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📊 [AX Insight팀] 주간 SNS 트렌드 리포트 (6월 5주차)</title>
+      <style>
+        /* 이전과 동일한 스타일 */
+        body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #333; }
+        .container { max-width: 800px; margin: 20px auto; background-color: #f4f7f9; padding: 15px; border-radius: 10px; }
+        .card { background-color: #ffffff; padding: 25px 30px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e0e6ed; border-left: 6px solid; }
+        .card-insight { border-left-color: #ff6f61; } .card-top-content { border-left-color: #4a90e2; }
+        .card-analysis { border-left-color: #50c878; } .card-charts { border-left-color: #8e44ad; }
+        .card-comment { border-left-color: #f1c40f; } .card-suggestion { border-left-color: #1abc9c; }
+        .card-competitor-summary { border-left-color: #fd7e14; } /* 경쟁사 요약 주황색 */
+
+        /* 새로운 스타일 추가 */
+        .report-title-box {
+          background-color: #e0f2f7; /* 연한 파란색 */
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .report-title {
+          color: #2c3e50;
+          font-size: 26px;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        h3 { color: #ffffff; background-color: #5d6d7e; padding: 10px 15px; margin: -25px -30px 20px -30px; border-radius: 8px 8px 0 0; font-size: 18px; font-weight: 600; display: flex; align-items: center; }
+        .card-insight h3 { background-color: #ff6f61; } .card-top-content h3 { background-color: #4a90e2; }
+        .card-analysis h3 { background-color: #50c878; } .card-charts h3 { background-color: #8e44ad; }
+        .card-comment h3 { background-color: #f1c40f; color: #555;} .card-suggestion h3 { background-color: #1abc9c; }
+        .card-competitor-summary h3 { background-color: #fd7e14; } /* 경쟁사 요약 주황색 */
+
+        h4 { font-size: 16px; margin: 25px 0 12px 0; color: #ffffff; font-weight: 600; border-bottom: none; padding: 8px 15px; background-color: #a5b1c2; border-radius: 6px 6px 0 0;} /* h4 스타일 개선 */
+        p, li, td, th { font-size: 14px; color: #495057; line-height: 1.75; }
+        ul { list-style-type: none; padding: 0; margin: 0; }
+        .subsection-content { background-color: #ffffff; padding: 15px 20px; border-radius: 0 0 6px 6px; border: 1px solid #e0e6ed; border-top: none; margin-bottom: 25px; margin-top: -12px;} /* 서브섹션 박스 */
+        .subsection-content ul { padding-left: 0px;} /* 내부 ul 패딩 제거 */
+        li { margin-bottom: 15px; padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid #f1f3f5;}
+        li:last-child { border-bottom: none; margin-bottom: 0;}
+        li::before { content: '✔'; color: #3498db; position: absolute; left: 0; top: 11px; font-size: 14px; font-weight: bold; }
+
+        a { color: #2980b9; text-decoration: none; font-weight: 500; } a:hover { text-decoration: underline; color: #1f618d; }
+        .greeting, .closing { text-align: left; font-size: 14px; margin-bottom: 25px; line-height: 1.7; }
+        .closing { margin-top: 30px; font-size: 12px; border-top: 1px solid #d5dbdb; padding-top: 20px; color: #7f8c8d; }
+        .footer { text-align: center; color: #aab7c4; font-size: 11px; margin-top: 30px; }
+        .highlight { background-color: #fef9e7; padding: 2px 5px; border-radius: 4px; font-weight: 600; color: #b7950b; border: 1px solid #fdeca6;}
+        .sub-link-box { background-color: #eafaf1; padding: 12px 18px; border-radius: 6px; margin: 15px 0 20px 0; font-size: 13px; border: 1px solid #a3e4d7; }
+        .sub-link-box a { color: #16a085; font-weight: 600;}
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 15px; border: 1px solid #dee2e6; border-radius: 6px; overflow: hidden; }
+        th, td { border-bottom: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-size: 13px; vertical-align: top; } /* vertical-align 추가 */
+        td:first-child { color: #333; font-weight: 500;}
+        th { background-color: #f1f3f5; font-weight: 600; color: #495057; border-top: none; border-bottom-width: 2px;}
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background-color: #f8f9fa; }
+        .table-caption { font-size: 15px; font-weight: 600; margin-bottom: 10px; color: #34495e; }
+        .ai-comment { background-color: #f8f9fa; border-left: 4px solid #adb5bd; padding: 12px 18px; margin-top: 18px; font-size: 13px; border-radius: 4px; line-height: 1.65; color: #495057; }
+        .emoji { font-size: 1.1em; margin-right: 10px; vertical-align: -1px; }
+        .small-text { font-size: 12px; color: #868e96; margin-top: 6px; display: block; }
+        .keyword-tag { background-color: #e9ecef; padding: 4px 10px; border-radius: 15px; font-size: 12px; margin-right: 6px; display: inline-block; margin-bottom: 6px; color: #495057; border: 1px solid #ced4da;}
+        /* 댓글 시각화 스타일 */
+        .sentiment-bar-container { display: flex; height: 22px; border-radius: 5px; overflow: hidden; margin-bottom: 8px; border: 1px solid #ced4da; background-color: #e9ecef; }
+        .sentiment-bar { display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 600; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+        .sentiment-positive { background-color: #2ecc71; } /* 초록 */
+        .sentiment-neutral { background-color: #f39c12; color: #fff;} /* 주황 */
+        .sentiment-negative { background-color: #e74c3c; } /* 빨강 */
+        .comment-list { list-style-type: decimal; padding-left: 20px; margin-top: 8px; }
+        .comment-list li { margin-bottom: 8px; padding-left: 8px; border-bottom: none; line-height: 1.6; }
+        .comment-list li::before { content: counter(list-item) ". "; counter-increment: list-item; position: absolute; left: -5px; top: 1px; color: #95a5a6; font-size: 13px; font-weight: normal;}
+        .ref-video-link { font-size: 11px; color: #7f8c8d; margin-left: 5px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; } /* 관련 영상 링크 스타일 */
+
+      </style></head><body><div class="container">
+        <div class="report-title-box">
+          <h2 class="report-title">📊 [AX Insight팀] 주간 SNS 트렌드 리포트 (6월 5주차)</h2>
+        </div>
+        <p class="greeting">안녕하세요, AX Insight팀 SNS 탐정입니다! 🕵️<br>지난주 유튜브와 인스타그램에서 뜨거웠던 콘텐츠와 트렌드를 파헤쳐 왔어요!<br>주간 SNS 트렌드가 어땠는지 LG전자와 경쟁사의 주요 움직임을 함께 살펴보시죠~</p>
+
+        <div class="card card-insight"><h3><span class="emoji">⚡</span>금주의 인사이트</h3><p>전자/IT 인기 유튜버들의 유튜브 데이터를 분석한 결과, 가장 높은 조회수를 기록한 YouTube 영상의 제목은 "긴급속보 | 애플, 최소 20만원 넘게 가격 올려버렸다? 갑자기 이런 미친 결정을 한 진짜 이유"이며 조회수는 448,493회입니다. 
+이번 주 IT 유튜버 콘텐츠에서는 애플의 가격 인상 이슈가 압도적인 관심을 받으며, 소비자들의 가격 민감도가 매우 높아진 것으로 나타났습니다. 
+LG전자는 프리미엄 OLED TV와 노트북 라인업에서 ‘가성비’와 ‘지속가능성’을 강조한 콘텐츠를 강화하여 애플 중심의 담론에서 벗어나 차별화된 브랜드 영향력을 구축해야 합니다. 
+인스타그램 총 좋아요 1,196,791건 중 LG 관련 게시물의 참여율이 경쟁사 대비 낮은 것으로 분석되어, 제품 실제 사용 장면과 사용자 생성 콘텐츠(UGC) 캠페인을 대폭 확대할 필요가 있습니다. 
+경쟁사인 삼성전자와 애플은 각각 갤럭시 AI 기능과 애플 인텔리전스 관련 영상을 집중적으로 배포하며 미래 기술 이미지를 선점하고 있으므로, LG전자도 AI 홈 IoT와 게이밍 모니터의 실사용 리뷰 콘텐츠를 적극적으로 제작·유통해야 합니다. 
+단기적으로는 인기 IT 유튜버 잇섭, 피코, 테크유튜버들과의 콜라보를 통해 가격 인상 이슈를 역으로 활용한 ‘가치 중심 프리미엄’ 메시지를 전달하는 전략을 즉시 실행하는 것이 효과적입니다. 
+이러한 데이터 기반 접근을 통해 LG전자는 단순 스펙 경쟁을 넘어 소비자 감정과 가치관을 연결하는 브랜드로 재포지셔닝할 수 있을 것입니다.</p></div>
+
+      <div class="card card-top-content"><h3><span class="emoji">🏆</span>상위 콘텐츠</h3>
+        <div class="sub-link-box">💡 Detail한 유튜브 콘텐츠 분석은 <a href="https://taesung01.github.io/youtube-analysis-form/" target="_blank">[AX Insight팀] YouTube 동영상 분석 Agent</a> 로 진행해 주세요!</div>
+        <h4><span class="emoji">📺</span>주목할 유튜브 영상 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. 긴급속보 | 애플, 최소 20만원 넘게 가격 올려버렸다? 갑자기 이런 미친 결정을 한 진짜 이유 (잇섭)</strong><span class="small-text">- 업로드: 2026.06.26 | 조회수: 448,493 | 좋아요: 4,916 | 댓글: 1,785</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+
+🔹 전반부
+
+영상은 애플의 갑작스러운 제품 가격 인상 소식을 긴급 속보 형식으로 소개하며 시작한다. 최소 20만원 이상의 인상 폭을 언급하며 소비자들의
+충격을 유발하는 질문으로 시청자의 호기심을 자극한다. 채널은 이 결정이 단순한 가격 조정이 아닌 특정 정책이나 비용 요인과 연결되어 있음을
+암시하며 본론으로 자연스럽게 연결한다.
+
+
+🔹 중반부
+
+중반부에서는 관세 정책과 공급망 비용 상승이 가격 인상의 주요 원인으로 제시된다. 애플이 직면한 글로벌 무역 환경 변화와 최근 발표된 규제
+요인을 구체적인 사례와 함께 설명하며 논리를 전개한다. 특히 아이폰 및 맥북 라인업의 예상 인상폭을 데이터와 함께 비교 분석하여 주장을
+뒷받침한다.
+
+
+🔹 후반부
+
+후반부는 가격 인상이 일시적 현상이 아닌 구조적 변화일 가능성을 강조하며 결론을 맺는다. 시청자에게는 구매 시기를 신중히 고려하라는 실질적인
+조언과 함께 향후 애플 생태계 전망을 제시한다. 최종 메시지는 소비자가 변화하는 시장 환경에 미리 대비해야 한다는 점을 명확히 전달한다.
+
+
+📝 결론 및 제언
+
+본 영상은 애플의 가격 인상 원인을 관세 및 공급망 비용으로 분석하며 소비자에게 구매 타이밍을 신중히 고려하라는 실질적 조언을 제공합니다. 높은
+조회수와 댓글 참여도로 시청자의 관심을 효과적으로 유도했으며, 산업 전반의 가격 변동성에 대한 경각심을 환기하는 콘텐츠입니다. </div><a href="https://www.youtube.com/watch?v=u-dSw0lLgB8" target="_blank">영상 보기 &rarr;</a></li><li><strong>2. 전 세계 주가를 박살낸 애플 기습 가격 인상 총정리 (UNDERkg)</strong><span class="small-text">- 업로드: 2026.06.26 | 조회수: 216,974 | 좋아요: 2,896 | 댓글: 976</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> 📋 핵심 내용 요약
+
+
+🔹 전반부
+
+영상은 애플의 기습 가격 인상 소식이 전 세계 주식 시장에 미친 충격을 소개하며 시작합니다. 인트로와 인사말을 통해 애플 제품 가격 변동이
+투자자들에게 어떤 영향을 주었는지 문제 제기를 합니다. 이어서 가격이 오히려 완화되거나 변화가 적었던 품목들을 언급하며 본격적인 분석을
+준비합니다.
+
+
+🔹 중반부
+
+중반부에서는 상승폭이 적었던 제품과 상승폭이 컸던 제품을 구분하여 상세히 비교합니다. 지역별 가격 인상 차이를 분석하며 미국·유럽·아시아 시장의
+반응을 구체적으로 설명하고, 특히 가격이 크게 오른 품목들을 집중 조명합니다. 데이터와 사례를 통해 애플의 가격 전략이 주가에 미친 영향을
+체계적으로 전달합니다.
+
+
+🔹 후반부
+
+후반부에서는 가격 인상의 한계와 여전히 긍정적인 측면을 언급하며 균형 잡힌 시각을 제시합니다. 전체 내용을 정리하고 향후 전망을 공유하며
+시청자들에게 실질적인 인사이트를 제공합니다. 마무리 멘트를 통해 애플 가격 정책의 장기적 영향을 되짚으며 영상을 마무리합니다.
+
+
+📝 결론 및 제언
+
+본 영상은 애플의 기습 가격 인상이 전 세계 주식 시장에 미친 충격을 정리한 콘텐츠입니다. 시청자는 애플의 지역별 가격 전략이 투자 심리에
+미치는 영향을 파악할 수 있으며, 기술 기업의 가격 정책이 산업 전반에 미치는 연쇄 효과를 이해하는 데 도움이 됩니다. LG전자와는 직접적인
+연관이 없으므로 별도의 대응은 필요하지 않습니다. </div><a href="https://www.youtube.com/watch?v=xr203vVf1aI" target="_blank">영상 보기 &rarr;</a></li><li><strong>3. 에어랩 이게 진짜 최최최최종.dyson | NEW 다이슨 에어랩 코안다 2X 뭐가 좋아졌는지 정리 +10% 할인 받는 팁 알려 드릴게요! (가전주부)</strong><span class="small-text">- 업로드: 2026.06.23 | 조회수: 58,832 | 좋아요: 0 | 댓글: 24</span> <div class="ai-comment" style="white-space: pre-wrap;"> <strong>[AI 요약]</strong><br> **영상 정보 요약**
+• 채널: 가전주부
+• 조회수: 58,832회
+• 좋아요: 0개
+• 댓글: 24개
+
+**주요 댓글**
+안녕하세요! 가전주부입니다💋 나이불문 여성에게 선물하면 열에 아홉은 절을 한다는(?) 미모 업글 갓템! ✅ 영상 속 다이슨 NEW 에어랩 코안다2x 멀티 스타일러 앤 드라이어 구매하러 가기  https://shorturl.at/bldlI  ✅ 다이슨 오너 인증하고 환...
+
+**성과 분석**
+• 중간 관심도: 5만 회 이상 조회로 관심 받는 콘텐츠
+
+*※ AI 요약이 준비되지 않아 기존 데이터를 바탕으로 생성된 요약입니다.* </div><a href="https://www.youtube.com/watch?v=k6avvEMk9_E" target="_blank">영상 보기 &rarr;</a></li></ul></div>
+
+        <h4><span class="emoji">📸</span>인스타그램 핫 포스트 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. Spider-Man (Swinging by to say hi. 👋
+
+#SpiderManBrandNewDay is in theatres July 31. Get tickets now.)</strong><span class="small-text">- 업로드: 2026.06.27 | 좋아요: 556,816 | 댓글: 827</span><a href="https://www.instagram.com/sony/" target="_blank">게시물 보기 &rarr;</a></li><li><strong>2. Sony Pictures Animation (Here's your first look at Ghostbusters: Night Shift. Coming to Netflix in 2027.
+
+New York City, 1994. Five years after the Ghostbusters took the Statue of Liberty for a walk, a new supernatural threat hits the Big Apple. Now, a group of scrappy New Yorkers must suit up, face their fears, and bust some ghosts.)</strong><span class="small-text">- 업로드: 2026.06.24 | 좋아요: 68,709 | 댓글: 217</span><a href="https://www.instagram.com/sony/" target="_blank">게시물 보기 &rarr;</a></li><li><strong>3. 다이슨 코리아 (새로운 툴로 업그레이드된 NEW 올인원 에어랩 2x
+
+NEW 에어스트레이트너 2x 툴
+세라믹 플레이트와 강력한 에어플로우가 만나
+매끄러운 스트레이트 스타일 완성 
+
+스타일의 끝, 다이슨
+
+#다이슨 #다이슨뷰티 #다이슨장원영 #다이슨에어랩 #에어랩 #에어랩2x #올인원스타일)</strong><span class="small-text">- 업로드: 2026.06.24 | 좋아요: 16,686 | 댓글: 164</span><a href="https://www.instagram.com/dyson_kr/" target="_blank">게시물 보기 &rarr;</a></li></ul></div>
+        <h4><span class="emoji">🔥</span>주요 경쟁사 콘텐츠 (상위 3개)</h4> <div class="subsection-content"><ul><li><strong>1. 기타: 하루종일 모니터 보는 공대생 눈관리 꿀템👀#안구건조증 #꿀팁 #뷰티꿀팁</strong><span class="small-text">- 채널: 민유지 Ji yumin | 업로드: 2026.06.20 | 조회수: 1,043,081 | 좋아요: 22,764 | 댓글: 78</span><a href="https://www.youtube.com/watch?v=-HhnIi_e5YQ" target="_blank">영상 보기 &rarr;</a></li><li><strong>2. 삼성전자: 아내 몰래 컴퓨터를 사면 생기는 일ㅋㅋ</strong><span class="small-text">- 채널: 리뷰띠 | 업로드: 2026.06.27 | 조회수: 276,417 | 좋아요: 2,538 | 댓글: 85</span><a href="https://www.youtube.com/watch?v=LivX6OpjUZE" target="_blank">영상 보기 &rarr;</a></li><li><strong>3. TCL: “제습기 이중에서 고르세요!” 2026 제습기 비교추천🔥 용도별 Best3｜제습기추천｜가성비제습기｜위닉스｜에어메이드｜미로｜TCL｜롯데알미늄｜원룸제습기｜옷방제습기｜여름제습기</strong><span class="small-text">- 채널: 리뷰머신 | 업로드: 2026.06.24 | 조회수: 124,804 | 좋아요: 216 | 댓글: 219</span><a href="https://www.youtube.com/watch?v=IkBPnx3RtTg" target="_blank">영상 보기 &rarr;</a></li></ul></div>
+      </div>
+
+      
+    <div class="card card-analysis"> <h3><span class="emoji">📈</span> 주간 YouTube 경쟁사 분석</h3> <h4 style="margin-top: 0; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">주요 경쟁사 동향 (Top 7 언급량 기준)</h4>
+      <table style="width:100%; border-collapse:collapse; font-size:13px;"><thead><tr style="background-color:#f1f3f5;"><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">브랜드</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">언급량</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 조회수/좋아요</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 좋아요/댓글</th><th style="border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; font-weight: 600; color: #495057;">평균 댓글/참여율</th></tr></thead><tbody><tr style="background-color: #e9f5ff;"><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">LG (기준)</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">91</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">326.41</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">4.83</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">60.47</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">기타</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">343</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">76.93</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">23.26</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">38.33</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">삼성전자</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">65</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">159.51</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">7.87</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">30.53</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">HP</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">33</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">149.61</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">21.20</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">25.55</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">애플</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">27</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">236.46</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">4.94</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">23.77</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">Apple</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">20</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">99.03</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">11.39</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">21.25</td></tr><tr><td style="padding: 10px 12px; border: 1px solid #dee2e6; font-weight: 500; color: #333;">샤오미</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">14</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">551.16</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">1.26</td><td style="padding: 10px 12px; border: 1px solid #dee2e6;">235.79</td></tr></tbody></table>
+
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">주간 트렌드 분석</h4>
+      <p>**주간 유튜브 트렌드 분석:**
+
+이번 주 유튜브에서는 ‘잇섭’이 압도적 1위를 차지하며 개인 테크 리뷰어가 대세임을 재확인했습니다. 경쟁사 콘텐츠는 아이패드 변신, QHD 모니터 추천, 24.5인치 OLED 모니터 등 **고성능 디스플레이·생산성** 중심으로 움직이고 있어, LG전자는 **OLED·IPS 고주사율 모니터**와 ** gram 노트북**의 생산성·게이밍 라인업을 적극적으로 연계한 콘텐츠 전략이 필요한 상황입니다.</p>
+
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #333; background-color: transparent; border: none; padding-left: 0; border-bottom: 1px solid #eee; padding-bottom: 5px;">분석 기반 추천사항</h4>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13px; list-style-type: disc;"><li>**LG전자 소셜 미디어 전략 제안**</li><li></li><li><li>참여율이 LG(0.75%)보다 높은 삼성(1.02%), HP(1.30%), Apple(1.71%)을 벤치마킹해 콘텐츠를 **사용자 참여형**으로 전환합니다. 제품 실제 사용 후기 이벤트, 댓글을 통한 Q&A 라이브, UGC(사용자 생성 콘텐츠) 공모전을 정기적으로 진행하여 참여율을 1.5% 이상으로 끌어올립니다.</li></li><li></li><li><li>긍정율이 가장 높은 HP(91.67%)와 Apple(86.31%)의 강점을 분석해 **감성적·프리미엄 콘텐츠**를 강화합니다. LG 제품의 세련된 디자인, 혁신 기술, 지속가능성을 강조하는 고품질 영상과 스토리텔링 콘텐츠를 Instagram Reels와 YouTube Shorts 중심으로 제작·배포합니다.</li></li><li></li><li><li>기타 브랜드의 압도적인 언급량(343)을 따라잡기 위해 **크로스 플랫폼 통합 캠페인**을 실시합니다. TikTok과 Instagram에서 동일한 해시태그(#LGLifeIsGood #LGInnovation) 캠페인을 전개하고, 삼성전자와의 직접 비교 콘텐츠(스펙 비교, 사용자 체험 비교)를 자연스럽게 노출하여 언급량을 증가시킵니다.</li></li></ul>
+
+      <div class="sub-link-box" style="margin-top: 20px;">🔗 <a href="https://taesung01.github.io/youtube-analysis-form/dashboard.html" target="_blank">주간 YouTube Trend 스냅샷 대시보드</a><br><span style="font-size: 12px; color: #555;">브랜드별 SNS 상세비교 지표는 위 대시보드를 참조하세요!</span></div>
+    </div>
+
+      <div class="card card-charts"><h3><span class="emoji">⚔️</span> 경쟁사 분석 차트</h3>
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">📊 브랜드별 SNS 언급량 비교</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%2C%22HP%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22Apple%22%2C%22%EC%83%A4%EC%98%A4%EB%AF%B8%22%2C%22TCL%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EC%96%B8%EA%B8%89%EB%9F%89%22%2C%22data%22%3A%5B343%2C65%2C33%2C27%2C20%2C14%2C8%5D%7D%5D%7D%7D" alt="📊 브랜드별 SNS 언급량 비교" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">👀 브랜드별 SNS 참여율</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%2C%22HP%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22Apple%22%2C%22%EC%83%A4%EC%98%A4%EB%AF%B8%22%2C%22TCL%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EC%B0%B8%EC%97%AC%EC%9C%A8(%25)%22%2C%22data%22%3A%5B%222.10%22%2C%221.02%22%2C%221.30%22%2C%221.05%22%2C%221.71%22%2C%220.40%22%2C%220.70%22%5D%7D%5D%7D%7D" alt="👀 브랜드별 SNS 참여율" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <p class="table-caption">🔥 브랜드별 긍정적 언급 비율</p>
+          <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22%EA%B8%B0%ED%83%80%22%2C%22%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%22%2C%22HP%22%2C%22%EC%95%A0%ED%94%8C%22%2C%22Apple%22%2C%22%EC%83%A4%EC%98%A4%EB%AF%B8%22%2C%22TCL%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22%EA%B8%8D%EC%A0%95%EC%A0%81%20%EC%96%B8%EA%B8%89%20%EB%B9%84%EC%9C%A8(%25)%22%2C%22data%22%3A%5B%2275.92%22%2C%2264.33%22%2C%2291.67%22%2C%2286.31%22%2C%2254.76%22%2C%22100.00%22%2C%22100.00%22%5D%7D%5D%7D%7D" alt="🔥 브랜드별 긍정적 언급 비율" style="max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #eee;">
+        </div>
+      <p class="small-text">* 위 차트는 QuickChart.io를 통해 생성된 이미지이며, 세부 데이터는 <a href="https://taesung01.github.io/youtube-analysis-form/dashboard.html" target="_blank">주간 YouTube Trend 스냅샷</a> 대시보드를 참조하세요.</p></div>
+
+      <div class="card card-analysis"><h3><span class="emoji">📊</span>유튜브 시청자 반응 분석</h3>
+        <p class="table-caption">주요 지표 (IT/전자 유튜버 대상)</p><table><thead><tr><th>지표</th><th>값</th></tr></thead><tbody>
+        <tr><td>총 조회수</td><td>1,731,691</td></tr><tr><td>총 좋아요</td><td>19,550</td></tr>
+        <tr><td>총 댓글수</td><td>4,937</td></tr><tr><td>좋아요/조회수 비율</td><td>1.13%</td></tr>
+        </tbody></table><div class="ai-comment">**코멘트:**
+
+시청자 반응 수준은 좋아요율 1.13%로 IT 콘텐츠 평균 대비 다소 낮은 편입니다.  
+댓글 참여도는 0.28%로 양호하나, 전체적인 열정도가 높지 않아 콘텐츠 몰입도가 부족해 보입니다.  
+LG전자는 제품의 차별화된 사용 경험과 감정적 스토리를 강조한 콘텐츠를 제작해 시청자 공감을 높일 것을 추천합니다.</div></div>
+
+      <div class="card card-analysis"><h3><span class="emoji">📅</span>요일별 게시 성과 분석</h3>
+        <p class="table-caption">유튜브 요일별 좋아요 분포 (IT/전자 유튜버)</p><table><thead><tr><th>요일</th><th>좋아요 수</th></tr></thead><tbody>
+        <tr><td>월요일</td><td>4,442 </td></tr><tr><td>화요일</td><td>1,018 </td></tr><tr><td>수요일</td><td>1,243 </td></tr><tr><td>목요일</td><td>3,103 </td></tr><tr><td>금요일</td><td>9,744 <span class="highlight">(최고)</span></td></tr><tr><td>토요일</td><td>0 </td></tr><tr><td>일요일</td><td>0 </td></tr>
+        </tbody></table><p class="table-caption" style="margin-top: 20px;">인스타그램 요일별 좋아요 분포</p><table><thead><tr><th>요일</th><th>좋아요 수</th></tr></thead><tbody>
+        <tr><td>월요일</td><td>175 </td></tr><tr><td>화요일</td><td>162,586 </td></tr><tr><td>수요일</td><td>99,279 </td></tr><tr><td>목요일</td><td>229,095 </td></tr><tr><td>금요일</td><td>8,068 </td></tr><tr><td>토요일</td><td>697,588 <span class="highlight">(최고)</span></td></tr><tr><td>일요일</td><td>0 </td></tr>
+        </tbody></table><div class="ai-comment">**최적 게시 전략:**
+
+- 유튜브는 금요일에 좋아요가 가장 높아, 주말 전 콘텐츠 업로드를 추천합니다.
+- 인스타그램은 토요일 게시가 최고 성과를 보이니, 주말 타겟 콘텐츠를 집중하세요.
+- 플랫폼별 최적 요일(유튜브: 금 / 인스타: 토)에 맞춰 게시 일정을 조정하면 전체 engagement가 크게 상승할 수 있습니다.</div></div>
+
+      <div class="card card-comment"><h3><span class="emoji">📌</span>해시태그별 참여율 분석</h3>
+        <p class="table-caption">상위 해시태그별 참여율 </p><table><thead><tr><th>해시태그</th><th>참여율</th><th>좋아요</th></tr></thead><tbody>
+        <tr><td>#VoicesofGalaxy <span class="highlight">(최고)</span></td><td>0.09%</td><td>5,562</td></tr><tr><td>#New갤럭시구독한정</td><td>0.03%</td><td>1,912</td></tr>
+        <tr><td>#삼성AITV</td><td>0.02%</td><td>7,748</td></tr><tr><td>#GalaxyS25Ultra</td><td>0.02%</td><td>1,382</td></tr><tr><td>#스위치2출시</td><td>0.01%</td><td>350</td></tr></tbody></table>
+        <div class="ai-comment">해시태그 분석 데이터를 찾을 수 없습니다. (InstagramAnalysis 시트 확인 필요)</div>
+        <p class="small-text">* 참고: 실제 Detail한 해시태그 분석 결과는 첨부와 코멘트를 참조하세요.</p></div>
+
+      <div class="card card-comment"><h3><span class="emoji">💬</span>시청자 댓글 트렌드 분석</h3><p class="table-caption">댓글 감성 분석:</p>
+                      <div class="sentiment-bar-container">
+                        <div class="sentiment-bar sentiment-positive" style="width:18%" title="긍정 18%">18%</div>
+                        <div class="sentiment-bar sentiment-neutral" style="width:35%" title="중립 35%">35%</div>
+                        <div class="sentiment-bar sentiment-negative" style="width:47%" title="부정 47%">47%</div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 15px; padding: 0 5px;">
+                        <span style="color: #2ecc71;">■ 긍정</span><span style="color: #f39c12;">■ 중립</span><span style="color: #e74c3c;">■ 부정</span>
+                      </div><p class="table-caption" style="margin-top: 25px;">주요 언급 키워드:</p><table><thead><tr><th>키워드</th><th>언급 횟수 (AI 추정)</th></tr></thead><tbody><tr>
+                                <td><span class="keyword-tag">애플</span></td>
+                                <td>28</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">가격</span></td>
+                                <td>19</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">레이니</span></td>
+                                <td>12</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">메모리</span></td>
+                                <td>11</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">키캡</span></td>
+                                <td>9</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">환율</span></td>
+                                <td>8</td>
+                              </tr><tr>
+                                <td><span class="keyword-tag">삼성</span></td>
+                                <td>6</td>
+                              </tr></tbody></table><p class="small-text" style="margin-top: 5px;">* 언급 횟수는 AI 추정치입니다.</p><p class="table-caption" style="margin-top: 25px;">분석 대상 주요 영상 (상위 3개):</p>
+                      <ol class="comment-list"><li><a href="https://www.youtube.com/watch?v=u-dSw0lLgB8" target="_blank" title="긴급속보 | 애플, 최소 20만원 넘게 가격 올려버렸다? 갑자기 이런 미친 결정을 한 진짜 이유">긴급속보 | 애플, 최소 20만원 넘게 가격 올려버렸다? 갑자기 이런 미친 결정을 한 진짜 이유</a> (잇섭)</li><li><a href="https://www.youtube.com/watch?v=xr203vVf1aI" target="_blank" title="전 세계 주가를 박살낸 애플 기습 가격 인상 총정리">전 세계 주가를 박살낸 애플 기습 가격 인상 총정리</a> (UNDERkg)</li><li><a href="https://www.youtube.com/watch?v=k6avvEMk9_E" target="_blank" title="에어랩 이게 진짜 최최최최종.dyson | NEW 다이슨 에어랩 코안다 2X 뭐가 좋아졌는지 정리 +10% 할인 받는 팁 알려 드릴게요!">에어랩 이게 진짜 최최최최종.dyson | NEW 다이슨 에어랩 코안다 2X 뭐가 좋아졌는지 정리 +10% 할인 받는 팁 알려 드릴게요!</a> (가전주부)</li></ol><p class="table-caption" style="margin-top: 25px;">주요 질문/요청:</p>
+                      <ol class="comment-list"><li>레이니75 vs 웨이브75 비교해주세요</li><li>키캡만 어디 구매할수있는 방법 없을까요</li><li>레이니가 60배열 만들어주면 소원이 없을 텐데</li><li>Google AI Edge Gallery 앱 한번 사용해보시고 리뷰 부탁드립니다</li><li>잇섭님 다이소 완두콩 무선 이어폰 리뷰해주세요</li><li>2 million KRW 정도의 가성비 게이밍 노트북 추천해주세요</li><li>잇섭 님 리눅스랑 edex-ui 소개 해주세요</li></ol><p class="small-text" style="margin-top: 15px;">* 참고: 상위 유튜브 영상의 댓글을 기반으로 분석한 결과입니다.</p></div><div class="card card-suggestion"><h3><span class="emoji">💡</span>다음 주를 위한 제안</h3>**다음 주 LG전자 추천 소셜 미디어 활동 3가지**
+
+<p><strong>- [잇섭 콜라보 콘텐츠 기획]:</strong><br>인기 IT 유튜버 ‘잇섭’과 협업하여 LG 그램 2025 신제품을 주제로 한 영상을 제작합니다. 잇섭의 시그니처인 ‘실사용 리뷰 + 유머’ 스타일로, “진짜 999g 노트북으로 해외 출장 가면 어떻게 될까?”라는 콘셉트로 영상을 기획하고, LG 공식 유튜브와 인스타그램 릴스에도 하이라이트 클립을 동시에 업로드합니다. 영상 공개 전 잇섭 인스타그램 스토리를 통해 LG 그램을 미리 공개하는 티저도 진행합니다.</p>
+
+<p><strong>- [Spider-Man × LG 그램 크로스오버 릴스 시리즈]:</strong><br>인스타그램에서 높은 인기를 끌고 있는 Spider-Man 콘텐츠를 벤치마킹해, LG 그램을 스파이더맨과 콜라보한 재미있는 릴스 3부작을 제작합니다. “Spider-Man이 LG 그램으로 빌런을 해킹한다”, “그람으로 웹슈터 업그레이드”, “999g 그램으로 뉴욕 빌딩 점프하기” 등 가벼운 유머와 CG를 활용한 콘텐츠를 제작해 LG전자 한국·글로벌 인스타그램 계정에 순차 업로드합니다. 해시태그 #LG그램 #그램스파이더맨을 적극 활용합니다.</p>
+
+<p><strong>- [경쟁사 비교 ‘진짜 솔직 리뷰’ 챌린지]:</strong><br>이번 주 경쟁사(애플, 삼성, Dell, HP 등)가 활발한 가운데, LG 그램이 실제로 더 가볍고, 더 오래 가는 배터리와 성능을 가진 점을 강조하는 ‘진짜 솔직 비교’ 콘텐츠를 진행합니다. UNDERkg 스타일의 객관적 비교 영상을 LG 공식 유튜브에 업로드하고, 인스타그램에서는 “그램 vs 맥북, 7일간 실제 사용 후기”라는 테마로 릴스와 스토리를 연속 게시합니다. 시청자들이 직접 비교할 수 있도록 투표 스티커와 댓글 이벤트도 함께 진행하여 참여도를 높입니다.</p></div><div class="closing">이번 주 SNS 인사이트, 도움이 되셨나요? 추가로 궁금한 점이나 제안 있으면 언제든 말씀해주세요!<br>문의: AX Insight팀 (<a href="mailto:taesung01.lee@lge.com">taesung01.lee@lge.com</a>)<br><br><span style="font-size: 11px; color: #888;">P.S. 이 리포트는 AI 탐정이 자동 생성했어요! 문제가 있으면 테스에게 SOS!</span></div>
+      <p class="footer">이 리포트는 LG전자 AX Insight팀을 위해 자동 생성되었습니다.</p></div></body></html>
